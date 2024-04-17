@@ -1,0 +1,7 @@
+<apex:page controller="OpportunityHandler" contentType="application/msword#FileName.doc">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    </head>
+    {!customSettingValue}
+</apex:page>

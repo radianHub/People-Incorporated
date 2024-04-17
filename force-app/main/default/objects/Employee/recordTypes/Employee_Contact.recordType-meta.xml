@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Contact</fullName>
+    <active>true</active>
+    <label>Employee Contact</label>
+    <picklistValues>
+        <picklist>Availability</picklist>
+        <values>
+            <fullName>In The Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out Of Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out Sick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteering Time Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Remotely</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CurrentWellnessStatus</picklist>
+        <values>
+            <fullName>Available To Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote Work Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unavailable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EmployeeStatus</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EmploymentType</picklist>
+        <values>
+            <fullName>Full-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part-Time</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Binary %2F Non-Conforming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PreferredPronoun</picklist>
+        <values>
+            <fullName>He%2FHim%2FHis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%2FAsk Me</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer%2FHers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>They%2FThem%2FTheirs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
