@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Task Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Identification</fullName>
+                <default>false</default>
+                <label>1 - Identification</label>
+            </value>
+            <value>
+                <fullName>2 - Qualification</fullName>
+                <default>false</default>
+                <label>2 - Qualification</label>
+            </value>
+            <value>
+                <fullName>3 - Cultivation</fullName>
+                <default>false</default>
+                <label>3 - Cultivation</label>
+            </value>
+            <value>
+                <fullName>4 - Solicitation</fullName>
+                <default>false</default>
+                <label>4 - Solicitation</label>
+            </value>
+            <value>
+                <fullName>5 - Stewardship</fullName>
+                <default>false</default>
+                <label>5 - Stewardship</label>
+            </value>
+            <value>
+                <fullName>6 - Changing Minds Tour</fullName>
+                <default>false</default>
+                <label>6 - Changing Minds Tour</label>
+            </value>
+            <value>
+                <fullName>7 - Board Interaction</fullName>
+                <default>false</default>
+                <label>7 - Board Interaction</label>
+            </value>
+            <value>
+                <fullName>8 - Volunteer Engagement</fullName>
+                <default>false</default>
+                <label>8 - Volunteer Engagement</label>
+            </value>
+            <value>
+                <fullName>9 - Report/Final Report</fullName>
+                <default>false</default>
+                <label>9 - Report/Final Report</label>
+            </value>
+            <value>
+                <fullName>10 - Legislative Visit</fullName>
+                <default>false</default>
+                <label>10 - Legislative Visit</label>
+            </value>
+            <value>
+                <fullName>11 - Visibility</fullName>
+                <default>false</default>
+                <label>11 - Visibility</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
