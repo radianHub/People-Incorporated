@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity After Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity After Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Task</targetReference>
+        </connector>
+        <filterFormula>AND( {!$Record.RecordType.DeveloperName} = &apos;Donation&apos;, ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;))</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Assign_Task</name>
+        <label>Assign Task</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <flowName>Assign_Task_After_Opportunity_is_Created</flowName>
+        <inputAssignments>
+            <name>AssignedToID</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Name</name>
+            <value>
+                <elementReference>$Record.npsp__Primary_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RelatedToID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>
