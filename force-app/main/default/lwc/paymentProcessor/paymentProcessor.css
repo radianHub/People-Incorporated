@@ -1,1 +1,53 @@
-h1 {}
+/* .givingType .slds-radio_button-group {
+    gap: 10px;
+    border: 0;
+}
+
+.givingType .slds-radio_button {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+label.slds-radio_button__label {
+    border-radius: 8px;
+}
+
+.slds-radio_button:first-child>.slds-radio_faux, .slds-radio_button:first-child>.slds-radio--faux, .slds-radio_button:first-child>.slds-radio_button__label, .slds-radio_button:first-child>.slds-radio--button__label, .slds-radio--button:first-child>.slds-radio_faux, .slds-radio--button:first-child>.slds-radio--faux, .slds-radio--button:first-child>.slds-radio_button__label, .slds-radio--button:first-child>.slds-radio--button__label {
+    border-radius: 8px;
+}
+
+.slds-radio_button:last-child>.slds-radio_faux, .slds-radio_button:last-child>.slds-radio--faux, .slds-radio_button .slds-button_last>.slds-radio_faux, .slds-radio_button .slds-button--last>.slds-radio--faux, .slds-radio_button:last-child>.slds-radio_button__label, .slds-radio_button:last-child>.slds-radio--button__label, .slds-radio--button:last-child>.slds-radio_faux, .slds-radio--button:last-child>.slds-radio--faux, .slds-radio--button .slds-button_last>.slds-radio_faux, .slds-radio--button .slds-button--last>.slds-radio--faux, .slds-radio--button:last-child>.slds-radio_button__label, .slds-radio--button:last-child>.slds-radio--button__label {
+    border-radius: 8px;
+} */
+
+.container {
+    background-color: white;
+    margin: 1em;
+    border-radius: 15px;
+}
+
+.container div {
+    padding: 1em .5em 1em .5em;
+}
+
+.givingType {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.givingAmounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 40%;
+}
+
+.otherAmt {
+    display: flex;
+    justify-content: space-evenly;
+}

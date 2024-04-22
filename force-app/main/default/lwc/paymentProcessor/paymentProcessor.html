@@ -1,3 +1,65 @@
+<!-- sldsValidatorIgnore -->
 <template>
-  
+	<lightning-layout>
+		<lightning-layout-item>
+			<div class="container">
+				<div>
+					<p class="slds-text-heading_medium slds-text-align_center">Donation Amount</p>
+				</div>
+				<div class="givingType">
+					<button
+						value="once"
+						type="button"
+						onclick={clickDonationTypeBtn}>
+						<span>One-Time</span>
+					</button>
+					<button
+						value="month"
+						type="button"
+						onclick={clickDonationTypeBtn}>
+						<span>Monthly</span>
+					</button>
+				</div>
+				<template lwc:if={typeOnce}>
+					<div class="givingAmounts">
+						<template
+							for:each={donationAmounts.once}
+							for:item="amt">
+							<button
+								class="amtBtns"
+								key={amt}
+								value={amt}
+								type="button">
+								<span>{amt}</span>
+							</button>
+						</template>
+					</div>
+				</template>
+				<template lwc:elseif={typeOnce}>
+					<div class="givingAmounts">
+						<template
+							for:each={donationAmounts.monthly}
+							for:item="amt">
+							<button
+								class="amtBtns"
+								key={amt}
+								value={amt}
+								type="button">
+								<span>{amt}</span>
+							</button>
+						</template>
+					</div>
+				</template>
+				<div class="otherAmt">
+					<lightning-input
+						type="number"
+						label="Other Amount"
+						name="otherAmount"
+						formatter="currency"
+						step="0.01">
+					</lightning-input>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
 </template>
