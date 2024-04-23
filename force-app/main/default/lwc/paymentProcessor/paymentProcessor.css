@@ -26,7 +26,7 @@ label.slds-radio_button__label {
     border-radius: 15px;
 }
 
-.container div {
+.container > div {
     padding: 1em .5em 1em .5em;
 }
 
@@ -49,5 +49,50 @@ button {
 
 .otherAmt {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.otherAmt lightning-input {
+    width: 80%;
+}
+
+.honor {
+    display: grid; 
+    justify-items: center;
+}
+
+.honorGroup {
+    width: 80%;
+}
+
+.honorInfo {
+    width: 80%;
+}
+
+.honorCol {
+    display: grid;
+    column-gap: 10px;
+    justify-content: space-between;
+}
+
+.honorCol :first-child {
+    grid-column: 1 / 1;
+}
+
+.honorCol :last-child {
+    grid-column: 2 / 2;
+}
+
+.fee {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.feeChkbx {
+    display: flex;
+    width: 80%;
 }
