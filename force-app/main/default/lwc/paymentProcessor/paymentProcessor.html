@@ -8,14 +8,14 @@
 				</div>
 				<div class="givingType">
 					<button
+						name="once"
 						value="once"
-						type="button"
 						onclick={clickDonationTypeBtn}>
 						<span>One-Time</span>
 					</button>
 					<button
+						name="month"
 						value="month"
-						type="button"
 						onclick={clickDonationTypeBtn}>
 						<span>Monthly</span>
 					</button>
@@ -36,7 +36,7 @@
 						</template>
 					</div>
 				</template>
-				<template lwc:elseif={typeOnce}>
+				<template lwc:elseif={typeMonthly}>
 					<div class="givingAmounts">
 						<template
 							for:each={donationAmounts.monthly}

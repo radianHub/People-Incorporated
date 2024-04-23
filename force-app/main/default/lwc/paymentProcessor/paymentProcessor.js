@@ -82,6 +82,12 @@ export default class PaymentProcessor extends LightningElement {
 
 	// # HANDLERS
 
+	clickDonationTypeBtn(e) {
+		e.stopPropagation();
+		console.log(e.target.value);
+		this.givingType = e.target.value
+	}
+
 	clickHonorCheckBox(e) {
 		this.honor = e.detail.checked
 		if (this.honor) {
@@ -98,7 +104,7 @@ export default class PaymentProcessor extends LightningElement {
 	}
 
 	clickDonationAmtBtn(e) {
-		e.preventDefault();
+		e.stopPropagation();
 		this.donationAmt = e.target.value
 
 	}
@@ -181,6 +187,10 @@ export default class PaymentProcessor extends LightningElement {
 
 	get typeOnce() {
 		return this.givingType === 'once'
+	}
+
+	get typeMonthly() {
+		return this.givingType === 'month'
 	}
 	
 	get fee() {
