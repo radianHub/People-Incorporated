@@ -29,7 +29,8 @@
 								class="amtBtns"
 								key={amt}
 								value={amt}
-								type="button">
+								type="button"
+								onclick={clickDonationAmtBtn}>
 								<span>{amt}</span>
 							</button>
 						</template>
@@ -44,7 +45,8 @@
 								class="amtBtns"
 								key={amt}
 								value={amt}
-								type="button">
+								type="button"
+								onclick={clickDonationAmtBtn}>
 								<span>{amt}</span>
 							</button>
 						</template>
@@ -56,9 +58,112 @@
 						label="Other Amount"
 						name="otherAmount"
 						formatter="currency"
-						step="0.01">
+						step="0.01"
+						onchange={changeOtherDonationAmt}>
 					</lightning-input>
 				</div>
+				<div class="honor">
+					<lightning-input
+						class="honorGroup"
+						type="checkbox"
+						label="My gift is in honor or memory of someone."
+						name="honor"
+						onchange={clickHonorCheckBox}>
+					</lightning-input>
+					<template lwc:if={honor}>
+						<lightning-radio-group
+							class="honorGroup"
+							name="honorGroup"
+							label="Is this an honor or memorial gift?"
+							options={honorOptions}
+							value={honorSelection}
+							type="radio"
+							onchange={honorGroupChanged}>
+						</lightning-radio-group>
+						<div class="honorInfo">
+							<div class="honorCol">
+								<lightning-input
+									type="text"
+									name="fName"
+									label="First Name"
+									required={honor}>
+								</lightning-input>
+								<lightning-input
+									type="text"
+									name="lName"
+									label="Last Name"
+									required={honor}>
+								</lightning-input>
+							</div>
+							<template lwc:if={isHonor}>
+								<lightning-input
+									type="text"
+									name="address"
+									label="Address"
+									required={isHonor}>
+								</lightning-input>
+								<lightning-input
+									type="text"
+									name="city"
+									label="City"
+									required={isHonor}>
+								</lightning-input>
+								<div class="honorCol">
+									<lightning-combobox
+										name="state"
+										label="State"
+										value={state}
+										options={stateOptions}
+										onchange={stateListPicked}
+										required={isHonor}>
+									</lightning-combobox>
+									<lightning-input
+										type="text"
+										name="zip"
+										label="Zip Code"
+										required={isHonor}>
+									</lightning-input>
+								</div>
+								<lightning-input
+									type="email"
+									name="email"
+									label="Email Address"
+									required={isHonor}>
+								</lightning-input>
+								<lightning-input
+									type="tel"
+									name="phone"
+									label="Phone Number"
+									placeholder="XXX-XXX-XXXX"
+									pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+									required={isHonor}>
+								</lightning-input>
+							</template>
+						</div>
+					</template>
+				</div>
+				<template lwc:if={selectedDonation}>
+					<div class="fee">
+						<div class="slds-form-element feeChkbx">
+							<div class="slds-form-element__control" style="padding-top: .25rem">
+								<span class="slds-checkbox slds-checkbox_standalone">
+									<input
+										type="checkbox"
+										id="fee"
+										name="feeCheckbox"
+										onchange={checkFeeCheckbox} />
+									<span class="slds-checkbox_faux"></span>
+								</span>
+							</div>
+							<label
+								class="slds-form-element__label"
+								for="fee"
+								>I would like to cover the processing fee by adding ${fee} to my donation.</label
+							>
+						</div>
+						<div><b>My total donation is ${total}</b></div>
+					</div>
+				</template>
 			</div>
 		</lightning-layout-item>
 	</lightning-layout>

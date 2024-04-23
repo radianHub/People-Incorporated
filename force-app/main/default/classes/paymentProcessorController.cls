@@ -1,4 +1,5 @@
 public with sharing class paymentProcessorController {
+
     @AuraEnabled(cacheable=true)
     public static List<Donation_Amount__mdt> getDonationAmounts() {
         return [
@@ -15,5 +16,10 @@ public with sharing class paymentProcessorController {
                 Giving_Amount_6__c
             FROM Donation_Amount__mdt
         ];
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static Processing_Fee__c getProcessingFee(){
+        return Processing_Fee__c.getOrgDefaults();
     }
 }
