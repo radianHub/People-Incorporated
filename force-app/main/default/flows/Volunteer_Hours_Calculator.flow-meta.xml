@@ -116,6 +116,10 @@
                 <elementReference>$Record.GW_Volunteers__Contact__r.Account.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>GW_Volunteers__Volunteer_Hours__c</field>
+            <operator>NotEqualTo</operator>
+        </filters>
         <object>Contact</object>
         <outputReference>AllRelatedContacts</outputReference>
         <queriedFields>Id</queriedFields>
@@ -140,8 +144,17 @@
         <connector>
             <targetReference>Get_Account_Record</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GW_Volunteers__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
         <object>GW_Volunteers__Volunteer_Hours__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
