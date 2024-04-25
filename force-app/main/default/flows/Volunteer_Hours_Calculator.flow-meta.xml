@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_Hours</name>
         <label>Add Hours</label>
-        <locationX>264</locationX>
-        <locationY>755</locationY>
+        <locationX>572</locationX>
+        <locationY>708</locationY>
         <assignmentItems>
             <assignToReference>SumOfHours</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <decisions>
         <name>Has_Hours</name>
         <label>Has Hours?</label>
-        <locationX>396</locationX>
-        <locationY>647</locationY>
+        <locationX>704</locationX>
+        <locationY>600</locationY>
         <defaultConnector>
             <targetReference>Loop_Each_Contact</targetReference>
         </defaultConnector>
@@ -48,8 +48,8 @@
     <loops>
         <name>Loop_Each_Contact</name>
         <label>Loop Each Contact</label>
-        <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationX>484</locationX>
+        <locationY>492</locationY>
         <collectionReference>AllRelatedContacts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -81,8 +81,8 @@
     <recordLookups>
         <name>Get_Account_Record</name>
         <label>Get Account Record</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationX>484</locationX>
+        <locationY>276</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_All_Related_Contacts</targetReference>
@@ -102,8 +102,8 @@
     <recordLookups>
         <name>Get_All_Related_Contacts</name>
         <label>Get All Related Contacts</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>484</locationX>
+        <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Each_Contact</targetReference>
@@ -128,8 +128,8 @@
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>176</locationX>
-        <locationY>1031</locationY>
+        <locationX>484</locationX>
+        <locationY>984</locationY>
         <inputAssignments>
             <field>Total_Volunteer_Hours__c</field>
             <value>
@@ -141,9 +141,6 @@
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>Get_Account_Record</targetReference>
-        </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
@@ -155,6 +152,17 @@
         </filters>
         <object>GW_Volunteers__Volunteer_Hours__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Offset_Hours_Calculation</name>
+            <connector>
+                <targetReference>Get_Account_Record</targetReference>
+            </connector>
+            <label>Offset Hours Calculation</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
