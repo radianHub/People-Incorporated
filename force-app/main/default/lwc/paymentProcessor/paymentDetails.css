@@ -1,0 +1,33 @@
+.container {
+    background-color: white;
+    margin: 1em;
+    border-radius: 15px;
+    width: 27em;
+}
+
+.container > div {
+    padding: 1em;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.items > div {
+    padding: 1em;
+}
+
+.donorCol {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+.donateBtn {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
