@@ -1,29 +1,69 @@
 import { LightningElement, api, wire } from "lwc";
-import { CloseActionScreenEvent } from 'lightning/actions';
+// import { CloseActionScreenEvent } from 'lightning/actions';
+import amount from './paymentProcessor.html'
+import details from './paymentDetails.html'
 
 import getDonationAmounts from '@salesforce/apex/paymentProcessorController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/paymentProcessorController.getProcessingFee';
 
 export default class PaymentProcessor extends LightningElement {
+	page = amount;
+
 	@api recordId;
 	processingFee;
 	donationAmounts;	
 	givingType;
 	honor = false;
 	honorSelection;
-	state;
+	honoree = {};
 	donationAmt = 0;
+	useOther = false;
 	addFee = false;
+	changeAmt = false;
+	cc;
 
-	closeModal() {
-		this.dispatchEvent(new CloseActionScreenEvent());
-	}
+	// closeModal() {
+	// 	this.dispatchEvent(new CloseActionScreenEvent());
+	// }
 
 	// # LIFECYCLE HOOKS
 	
 	connectedCallback() {
 		this.getProcessingFee()	
 		this.getDonationAmounts()
+	}
+
+	render() {
+		return this.page
+	}
+
+	renderedCallback() {
+		if (this.page === amount && this.changeAmt) {
+			// eslint-disable-next-line @lwc/lwc/no-async-operation
+			setTimeout(() => {
+				this.template.querySelectorAll('.typeBtn').forEach(e => {
+					if (e.classList.contains('slds-button_brand')) {
+						this.unfocusBtn(e)			
+					}
+				})
+				this.focusBtn(this.template.querySelector('[name="' + this.givingType + '"]'))
+				
+				if (this.useOther) {
+					this.template.querySelector('[data-id="otherAmt"]').value = this.donationAmt
+				} else {
+					this.template.querySelectorAll('.amtBtns').forEach(e => {
+						if (e.classList.contains('slds-button_brand')) {
+							this.unfocusBtn(e)
+						}
+						let i = this.donationAmounts[this.givingType].indexOf(Number(this.donationAmt))
+						this.focusBtn(this.template.querySelector('[name="' + i +'"]'))
+					})
+				}
+
+				this.changeAmt = false
+			}, 10);
+
+		}
 	}
 
 	// # APEX
@@ -42,7 +82,7 @@ export default class PaymentProcessor extends LightningElement {
 		getDonationAmounts()
 			.then((r) => {
 				this.donationAmounts = {
-					monthly: null,
+					month: null,
 					once: null
 				}
 				r.forEach(e => {
@@ -65,13 +105,13 @@ export default class PaymentProcessor extends LightningElement {
 					}
 	
 					if (e.DeveloperName === 'Monthly') {
-						this.donationAmounts.monthly = amountArr
+						this.donationAmounts.month = amountArr
 					} else if (e.DeveloperName === 'One_Time') {
 						this.donationAmounts.once = amountArr
 					}
 				});
-				this.givingType = 'once';
-				console.log(this.donationAmounts);	
+				this.givingType = 'once'
+				console.log(this.donationAmounts)
 			})
 			.catch((e) => {
 				console.log(e);
@@ -80,13 +120,17 @@ export default class PaymentProcessor extends LightningElement {
 
 	// # PRIVATE METHODS
 
-	// # HANDLERS
-
-	clickDonationTypeBtn(e) {
-		e.stopPropagation();
-		console.log(e.target.value);
-		this.givingType = e.target.value
+	unfocusBtn(btn) {
+		btn.classList.remove('slds-button_brand')
+		btn.classList.add('slds-button_neutral')
 	}
+
+	focusBtn(btn) {
+		btn.classList.remove('slds-button_neutral')
+		btn.classList.add('slds-button_brand')
+	}
+
+	// # HANDLERS
 
 	clickHonorCheckBox(e) {
 		this.honor = e.detail.checked
@@ -99,22 +143,109 @@ export default class PaymentProcessor extends LightningElement {
 		this.honorSelection = e.detail.value
 	}
 
-	stateListPicked(e) {
-		this.state = e.detail.value
+	clickDonationTypeBtn(e) {
+		this.template.querySelectorAll('.typeBtn').forEach(e => {
+			if (e.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(e)			
+			}
+		})
+
+		let btn = this.template.querySelector('#' + e.currentTarget.id)
+		this.focusBtn(btn)
+		
+		this.givingType = e.currentTarget.value;
 	}
 
 	clickDonationAmtBtn(e) {
-		e.stopPropagation();
-		this.donationAmt = e.target.value
+		this.useOther = false;
+		let otherAmt = this.template.querySelector('[data-id="otherAmt"]')
+		otherAmt.value = null
 
+		this.template.querySelectorAll('.amtBtns').forEach(e => {
+			if (e.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(e)
+			}
+		})
+		
+		let btn = this.template.querySelector('[name="' + e.currentTarget.name + '"]')
+		this.focusBtn(btn)
+
+		this.donationAmt = e.currentTarget.value
 	}
 
 	changeOtherDonationAmt(e) {
+		this.useOther = true;
+		this.template.querySelectorAll('.amtBtns').forEach(e => {
+			if (e.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(e)
+			}
+		})
+
 		this.donationAmt = e.detail.value
 	}
 
 	checkFeeCheckbox(e) {
-		this.addFee = e.target.checked
+		this.addFee = e.currentTarget.checked
+	}
+
+	clickPaymentDetailsBtn() {
+		const validLI = [...this.template.querySelectorAll('.honorInfo lightning-input')]
+		.reduce((isValid, inp) => {
+			inp.reportValidity()
+			let valid = inp.checkValidity()
+
+			return isValid && valid
+		}, true)
+
+		const validLCB = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
+		.reduce((isValid, inp) => {
+			inp.reportValidity()
+			let valid = inp.checkValidity()
+
+			return isValid && valid
+		}, true)	
+	
+		if (validLI && validLCB) {
+			const li = [...this.template.querySelectorAll('.honorInfo lightning-input')]
+			.forEach(e => {
+				this.honoree[e.name] = e.value
+			})
+			const lcb = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
+			.forEach(e => {
+				this.honoree[e.name] = e.value
+			})
+
+			this.page = details
+		}
+	}
+
+	focusOutCCInput(e) {
+		e.currentTarget.maxLength = '20'
+		if (e.currentTarget.value) {
+			this.cc = e.currentTarget.value
+			let str = ''
+			let arr = e.currentTarget.value.split('')
+			for (let i = 0; i < arr.length; i++) {
+				str += (!i || (i % 4)) ? arr[i] : '-' + arr[i]
+			}
+			e.currentTarget.value = str	
+		}
+	}
+
+	focusInCCInput(e) {
+		e.currentTarget.maxLength = '16'
+		if (this.cc) {
+			e.currentTarget.value = this.cc
+		}
+	}
+
+	clickDonateBtn() {
+		console.log('Submit Payment and do stuff');
+	}
+
+	clickBackBtn() {
+		this.page = amount
+		this.changeAmt = true
 	}
 
 	// # GETTERS/SETTERS
@@ -194,30 +325,19 @@ export default class PaymentProcessor extends LightningElement {
 	}
 	
 	get fee() {
-		// let a;
-		// console.log(this.processingFee);
-		// if (this.processingFee.Use_Flat_Fee__c) {
-		// 	a = this.processingFee.Flat_Fee__c
-		// } else {
-		// 	console.log((Number(this.donationAmt) * (Number(this.processingFee.Processing_Fee_Percentage__c) * 0.01)).toFixed(2));
-		// 	a = this.donationAmt * (this.processingFee.Processing_Fee_Percentage__c * 0.01)
-		// }
-
-
-		// return a;
-
 		return this.processingFee.Use_Flat_Fee__c 
 			? ((Number(this.processingFee.Flat_Fee__c)).toFixed(2)).toString()
 			: ((Number(this.donationAmt) * (Number(this.processingFee.Processing_Fee_Percentage__c) * 0.01)).toFixed(2)).toString()
 	}
 
 	get total() {
-		// console.log(this.donationAmt);
-		// console.log(this.fee);
-		// console.log(this.donationAmt + this.fee);
 		return this.addFee 
 			? (Number(this.donationAmt) + Number(this.fee)).toFixed(2).toString()
-			: Number(this.donationAmt).toString()
+			: Number(this.donationAmt).toString() + '.00'
+	}
+
+	get feeCheckboxLabel() {
+		return 'I would like to cover the processing fee by adding $' + this.fee + ' to my donation.'
 	}
 
 	get selectedDonation() {
