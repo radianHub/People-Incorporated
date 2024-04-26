@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowChanges</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>linkedToDesignKit</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginBottom</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginLeft</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginRight</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>marginTop</name>
+                    <value>0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;line-height: 1.2;&quot;&gt;&lt;span style=&quot;font-variant: normal; white-space: pre-wrap;&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;{{{Recipient.Name}}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.2;&quot;&gt;&lt;span style=&quot;font-variant: normal; white-space: pre-wrap;&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;{{{Recipient.MailingStreet}}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.2;&quot;&gt;&lt;span style=&quot;font-variant: normal; white-space: pre-wrap;&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;{{{Recipient.MailingCity}}}, {{{Recipient.MailingState}}} {{{Recipient.MailingPostalCode}}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;Dear {{{Recipient.Salutation}}},&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;We may never find the words to express how grateful we are to you, but we will start with &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:italic&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;thank you!&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt; Your gift makes an incredible difference in our ability to reach community members in need of mental health support.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;One in five&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt; individuals are struggling with their mental health. Not all of these people live in cities where services are accessible, or have health insurance that covers mental health care, or even have a supportive friend in their lives to encourage them to seek help. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;This is where your gift to People Incorporated makes a difference.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;Your gift of {{{Opportunity.Amount}}} given on {{{Opportunity.CloseDate}}} affirms that &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;mental health is community health&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;, and that equitable and person-centered mental health care results in benefits for us all. It reaches out a helping hand to a neighbor, tells them that they are seen, and assures them that we are all in this together.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;Thanks to YOU, this year, People Incorporated will support more of your neighbors in need of compassionate mental health care. Each year, your gifts support over 10,000 children, adults, families, and &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;neighbors&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt; who are silently struggling in our communities.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;You are a vital part of the People Incorporated family. Your gifts represent hope, and your impact is deeply felt.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;With sincerest appreciation,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;Rachel Hickok, MNM&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;Director of Development&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&amp;nbsp;
+
+&lt;p style=&quot;line-height:1.2&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;P.S. Interested in going green? Email us at &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;a href=&quot;mailto:give@peopleincorporated.org&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#0000ff&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:underline&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none&quot;&gt;&lt;span style=&quot;text-decoration-skip-ink:none&quot;&gt;give@peopleincorporated.org&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-size:11pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:normal&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt; to opt out of printed gift acknowledgements and receive them in digital form only.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-size:8pt; font-variant:normal; white-space:pre-wrap&quot;&gt;&lt;span style=&quot;font-family:Calibri,sans-serif&quot;&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;span style=&quot;font-weight:400&quot;&gt;&lt;span style=&quot;font-style:italic&quot;&gt;&lt;span style=&quot;text-decoration:none&quot;&gt;People Incorporated is a not-for-profit organization under section 501(c)(3) of the IRS Code. Contributions are tax-deductible to the fullest extent provided by the law. No goods or services were provided in exchange for this gift.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:richText</componentName>
+                <identifier>contentbuilder_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-6cf4b749-c2af-470b-a7c1-c7131e2f61a1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columnBody</name>
+                    <value>Facet-6cf4b749-c2af-470b-a7c1-c7131e2f61a1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnCount</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnIndex</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columnSpacer</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>padding</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlign</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>width</name>
+                    <value>100%</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:column</componentName>
+                <identifier>contentbuilder_column3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-67f1dbf2-9323-4757-9a51-a45d6379d90b</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImagePosition</name>
+                    <value>left_top</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageRepeat</name>
+                    <value>no-repeat</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageSize</name>
+                    <value>cover</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-67f1dbf2-9323-4757-9a51-a45d6379d90b</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>verticalAlignment</name>
+                    <value>top</value>
+                </componentInstanceProperties>
+                <componentName>contentbuilder:row</componentName>
+                <identifier>contentbuilder_row3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Acknowledgement_Template</masterLabel>
+    <template>
+        <name>contentpage:defaultEmailTemplatePageTemplate</name>
+        <properties>
+            <name>backgroundColor</name>
+            <value>#E9EAEC</value>
+        </properties>
+        <properties>
+            <name>backgroundImageUrl</name>
+        </properties>
+        <properties>
+            <name>bodyColor</name>
+            <value>#FFFFFF</value>
+        </properties>
+        <properties>
+            <name>paddingBottom</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingLeft</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingRight</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>paddingTop</name>
+            <value>10</value>
+        </properties>
+        <properties>
+            <name>preheader</name>
+        </properties>
+    </template>
+    <type>EmailTemplatePage</type>
+</FlexiPage>
