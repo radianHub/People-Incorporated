@@ -1,12 +1,24 @@
 import { LightningElement, api, wire } from "lwc";
-import { CurrentPageReference } from 'lightning/navigation';
+// import { CloseActionScreenEvent } from 'lightning/actions';
 
+import getDonationAmounts from '@salesforce/apex/DonationSelectionController.getDonationAmounts';
+import getProcessingFee from '@salesforce/apex/DonationSelectionController.getProcessingFee';
+import getSettings from '@salesforce/apex/DonationSelectionController.getSettings'
 
-export default class PaymentProcessor extends LightningElement {
+export default class DonationSelection extends LightningElement {
 	@api recordId;
-	@api total;
-	@api givingType;
-	settings;	
+	settings;
+	processingFee;
+	donationAmounts;	
+	givingType;
+	honor = false;
+	honorSelection;
+	honoree = {};
+	donationAmt = 0;
+	useOther = false;
+	addFee = false;
+	changeAmt = false;
+	cc;
 
 	// closeModal() {
 	// 	this.dispatchEvent(new CloseActionScreenEvent());
@@ -20,43 +32,35 @@ export default class PaymentProcessor extends LightningElement {
 		this.getDonationAmounts()
 	}
 
-	render() {
-		return this.page
-	}
-
-	renderedCallback() {
-		if (this.page === amount && this.changeAmt) {
-			// eslint-disable-next-line @lwc/lwc/no-async-operation
-			setTimeout(() => {
-				this.template.querySelectorAll('.typeBtn').forEach(e => {
-					if (e.classList.contains('slds-button_brand')) {
-						this.unfocusBtn(e)			
-					}
-				})
-				this.focusBtn(this.template.querySelector('[name="' + this.givingType + '"]'))
+	// renderedCallback() {
+	// 	if (this.page === amount && this.changeAmt) {
+	// 		// eslint-disable-next-line @lwc/lwc/no-async-operation
+	// 		setTimeout(() => {
+	// 			this.template.querySelectorAll('.typeBtn').forEach(e => {
+	// 				if (e.classList.contains('slds-button_brand')) {
+	// 					this.unfocusBtn(e)			
+	// 				}
+	// 			})
+	// 			this.focusBtn(this.template.querySelector('[name="' + this.givingType + '"]'))
 				
-				if (this.useOther) {
-					this.template.querySelector('[data-id="otherAmt"]').value = this.donationAmt
-				} else {
-					this.template.querySelectorAll('.amtBtns').forEach(e => {
-						if (e.classList.contains('slds-button_brand')) {
-							this.unfocusBtn(e)
-						}
-						let i = this.donationAmounts[this.givingType].indexOf(Number(this.donationAmt))
-						this.focusBtn(this.template.querySelector('[name="' + i +'"]'))
-					})
-				}
+	// 			if (this.useOther) {
+	// 				this.template.querySelector('[data-id="otherAmt"]').value = this.donationAmt
+	// 			} else {
+	// 				this.template.querySelectorAll('.amtBtns').forEach(e => {
+	// 					if (e.classList.contains('slds-button_brand')) {
+	// 						this.unfocusBtn(e)
+	// 					}
+	// 					let i = this.donationAmounts[this.givingType].indexOf(Number(this.donationAmt))
+	// 					this.focusBtn(this.template.querySelector('[name="' + i +'"]'))
+	// 				})
+	// 			}
 
-				this.changeAmt = false
-			}, 10);
-
-		}
-	}
+	// 			this.changeAmt = false
+	// 		}, 10);
+	// 	}
+	// }
 
 	// # APEX
-
-	@wire(CurrentPageReference)
-	pageRef;
 
 	getSettings() {
 		getSettings()
@@ -130,6 +134,37 @@ export default class PaymentProcessor extends LightningElement {
 		btn.classList.add('slds-button_brand')
 	}
 
+	validate() {
+		const validLI = [...this.template.querySelectorAll('.honorInfo lightning-input')]
+		.reduce((isValid, inp) => {
+			inp.reportValidity()
+			let valid = inp.checkValidity()
+
+			return isValid && valid
+		}, true)
+
+		const validLCB = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
+		.reduce((isValid, inp) => {
+			inp.reportValidity()
+			let valid = inp.checkValidity()
+
+			return isValid && valid
+		}, true)	
+	
+		if (validLI && validLCB) {
+			const li = [...this.template.querySelectorAll('.honorInfo lightning-input')]
+			.forEach(e => {
+				this.honoree[e.name] = e.value
+			})
+			const lcb = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
+			.forEach(e => {
+				this.honoree[e.name] = e.value
+			})
+		}
+
+		return validLI && validLCB
+	}
+
 	// # HANDLERS
 
 	clickHonorCheckBox(e) {
@@ -188,37 +223,6 @@ export default class PaymentProcessor extends LightningElement {
 		this.addFee = e.currentTarget.checked
 	}
 
-	clickPaymentDetailsBtn() {
-		const validLI = [...this.template.querySelectorAll('.honorInfo lightning-input')]
-		.reduce((isValid, inp) => {
-			inp.reportValidity()
-			let valid = inp.checkValidity()
-
-			return isValid && valid
-		}, true)
-
-		const validLCB = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
-		.reduce((isValid, inp) => {
-			inp.reportValidity()
-			let valid = inp.checkValidity()
-
-			return isValid && valid
-		}, true)	
-	
-		if (validLI && validLCB) {
-			const li = [...this.template.querySelectorAll('.honorInfo lightning-input')]
-			.forEach(e => {
-				this.honoree[e.name] = e.value
-			})
-			const lcb = [...this.template.querySelectorAll('.honorInfo lightning-combobox')]
-			.forEach(e => {
-				this.honoree[e.name] = e.value
-			})
-
-			this.page = details
-		}
-	}
-
 	focusOutCCInput(e) {
 		e.currentTarget.maxLength = '20'
 		if (e.currentTarget.value) {
@@ -240,6 +244,11 @@ export default class PaymentProcessor extends LightningElement {
 	}
 
 	clickDonateBtn() {
+		if (this.validate()) {
+			console.log('send to payment processor');	
+		}
+
+		// TODO: MOVE TO PAYMENT PROCESSOR
 		let params = {
 			'success_url': window.location.origin, // Will be set in a custom setting
 			'cancel_url': window.location.origin, // Will be set in a custom setting
