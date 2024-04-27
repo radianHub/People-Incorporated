@@ -1,15 +1,19 @@
 import { LightningElement, api, wire } from "lwc";
+import { CurrentPageReference } from 'lightning/navigation';
 // import { CloseActionScreenEvent } from 'lightning/actions';
 import amount from './paymentProcessor.html'
 import details from './paymentDetails.html'
 
 import getDonationAmounts from '@salesforce/apex/paymentProcessorController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/paymentProcessorController.getProcessingFee';
+import getSettings from '@salesforce/apex/paymentProcessorController.getSettings';
+
 
 export default class PaymentProcessor extends LightningElement {
 	page = amount;
 
 	@api recordId;
+	settings;
 	processingFee;
 	donationAmounts;	
 	givingType;
@@ -29,6 +33,7 @@ export default class PaymentProcessor extends LightningElement {
 	// # LIFECYCLE HOOKS
 	
 	connectedCallback() {
+		this.getSettings()
 		this.getProcessingFee()	
 		this.getDonationAmounts()
 	}
@@ -67,6 +72,19 @@ export default class PaymentProcessor extends LightningElement {
 	}
 
 	// # APEX
+
+	@wire(CurrentPageReference)
+	pageRef;
+
+	getSettings() {
+		getSettings()
+			.then(r => {
+				this.settings = r
+			})
+			.catch(e => {
+				console.log(e);
+			})
+	}
 
 	getProcessingFee() {
 		getProcessingFee()
@@ -144,9 +162,9 @@ export default class PaymentProcessor extends LightningElement {
 	}
 
 	clickDonationTypeBtn(e) {
-		this.template.querySelectorAll('.typeBtn').forEach(e => {
-			if (e.classList.contains('slds-button_brand')) {
-				this.unfocusBtn(e)			
+		this.template.querySelectorAll('.typeBtn').forEach(i => {
+			if (i.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(i)			
 			}
 		})
 
@@ -161,9 +179,9 @@ export default class PaymentProcessor extends LightningElement {
 		let otherAmt = this.template.querySelector('[data-id="otherAmt"]')
 		otherAmt.value = null
 
-		this.template.querySelectorAll('.amtBtns').forEach(e => {
-			if (e.classList.contains('slds-button_brand')) {
-				this.unfocusBtn(e)
+		this.template.querySelectorAll('.amtBtns').forEach(i => {
+			if (i.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(i)
 			}
 		})
 		
@@ -175,9 +193,9 @@ export default class PaymentProcessor extends LightningElement {
 
 	changeOtherDonationAmt(e) {
 		this.useOther = true;
-		this.template.querySelectorAll('.amtBtns').forEach(e => {
-			if (e.classList.contains('slds-button_brand')) {
-				this.unfocusBtn(e)
+		this.template.querySelectorAll('.amtBtns').forEach(i => {
+			if (i.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(i)
 			}
 		})
 
@@ -239,8 +257,43 @@ export default class PaymentProcessor extends LightningElement {
 		}
 	}
 
+	// TODO: FINISH METHOD
+	// TODO: Add Success / Fail URLS to body
+	// TODO: Build webhook and hand response
 	clickDonateBtn() {
 		console.log('Submit Payment and do stuff');
+		console.log(this.settings.Success_Redirect__c);
+
+		let params = {
+			'success_url': window.location.origin,
+			'cancel_url': window.location.origin,
+			'line_items[0][price_data][unit_amount}': Number(this.total) * 100,
+			'line_items[0][quantity]': 0,
+			'line_items[0][price_data][currency]': 'usd',
+			'line_items[0][price_data][product_data][name]': 'Donation',
+			'mode': 'payment',
+			'payment_method_types[0]': 'card'
+		}
+
+		let body = new URLSearchParams(Object.entries(params)).toString()
+		console.log(body);
+
+		const response = fetch('https://api.stripe.com/v1/checkout/sessions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+				Authorization: `Bearer ${this.settings.Stripe_API_Key__c}`,
+				'Accept-Encoding': "gzip, deflate, br'",
+				Accept: '*/*',
+			},
+			body: body
+		})
+			.then(resp => resp.json())
+			.then(repos => {
+				console.log(repos);
+				window.open(repos.url, '_blank')
+			})
+
 	}
 
 	clickBackBtn() {
@@ -334,6 +387,10 @@ export default class PaymentProcessor extends LightningElement {
 		return this.addFee 
 			? (Number(this.donationAmt) + Number(this.fee)).toFixed(2).toString()
 			: Number(this.donationAmt).toString() + '.00'
+	}
+
+	get noTotal() {
+		return Number(this.total) !== 0;
 	}
 
 	get feeCheckboxLabel() {
