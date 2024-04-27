@@ -5,6 +5,9 @@
 			<div class="container">
 				<div class="header">
 					<p class="slds-text-heading_medium slds-text-align_center">Donation Amount</p>
+					<template lwc:if={noTotal}>
+						<p class="slds-text-heading_medium slds-text-align_center">${total}</p>
+					</template>
 				</div>
 				<div class="items">
 					<div class="givingType">
@@ -177,12 +180,20 @@
 					<div class="detailsBtn">
 						<lightning-button
 							variant="brand"
+							label="Donate Now"
+							title="donate"
+							icon-name="utility:currency"
+							icon-position="right"
+							onclick={clickDonateBtn}>
+						</lightning-button>
+						<!-- <lightning-button
+							variant="brand"
 							label="Payment Details"
 							title="paymentBtn"
 							icon-name="utility:forward"
 							icon-position="right"
 							onclick={clickPaymentDetailsBtn}>
-						</lightning-button>
+						</lightning-button> -->
 					</div>
 				</div>
 			</div>
