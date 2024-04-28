@@ -3,7 +3,6 @@ import { LightningElement, api, wire } from "lwc";
 
 import getDonationAmounts from '@salesforce/apex/DonationSelectionController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/DonationSelectionController.getProcessingFee';
-import getSettings from '@salesforce/apex/DonationSelectionController.getSettings'
 
 export default class DonationSelection extends LightningElement {
 	@api recordId;
@@ -15,10 +14,7 @@ export default class DonationSelection extends LightningElement {
 	honorSelection;
 	honoree = {};
 	donationAmt = 0;
-	useOther = false;
 	addFee = false;
-	changeAmt = false;
-	cc;
 
 	// closeModal() {
 	// 	this.dispatchEvent(new CloseActionScreenEvent());
@@ -27,50 +23,11 @@ export default class DonationSelection extends LightningElement {
 	// # LIFECYCLE HOOKS
 	
 	connectedCallback() {
-		this.getSettings()
 		this.getProcessingFee()	
 		this.getDonationAmounts()
 	}
 
-	// renderedCallback() {
-	// 	if (this.page === amount && this.changeAmt) {
-	// 		// eslint-disable-next-line @lwc/lwc/no-async-operation
-	// 		setTimeout(() => {
-	// 			this.template.querySelectorAll('.typeBtn').forEach(e => {
-	// 				if (e.classList.contains('slds-button_brand')) {
-	// 					this.unfocusBtn(e)			
-	// 				}
-	// 			})
-	// 			this.focusBtn(this.template.querySelector('[name="' + this.givingType + '"]'))
-				
-	// 			if (this.useOther) {
-	// 				this.template.querySelector('[data-id="otherAmt"]').value = this.donationAmt
-	// 			} else {
-	// 				this.template.querySelectorAll('.amtBtns').forEach(e => {
-	// 					if (e.classList.contains('slds-button_brand')) {
-	// 						this.unfocusBtn(e)
-	// 					}
-	// 					let i = this.donationAmounts[this.givingType].indexOf(Number(this.donationAmt))
-	// 					this.focusBtn(this.template.querySelector('[name="' + i +'"]'))
-	// 				})
-	// 			}
-
-	// 			this.changeAmt = false
-	// 		}, 10);
-	// 	}
-	// }
-
 	// # APEX
-
-	getSettings() {
-		getSettings()
-			.then(r => {
-				this.settings = r
-			})
-			.catch(e => {
-				console.log(e);
-			})
-	}
 
 	getProcessingFee() {
 		getProcessingFee()
@@ -192,7 +149,6 @@ export default class DonationSelection extends LightningElement {
 	}
 
 	clickDonationAmtBtn(e) {
-		this.useOther = false;
 		let otherAmt = this.template.querySelector('[data-id="otherAmt"]')
 		otherAmt.value = null
 
@@ -209,7 +165,6 @@ export default class DonationSelection extends LightningElement {
 	}
 
 	changeOtherDonationAmt(e) {
-		this.useOther = true;
 		this.template.querySelectorAll('.amtBtns').forEach(i => {
 			if (i.classList.contains('slds-button_brand')) {
 				this.unfocusBtn(i)
@@ -223,76 +178,11 @@ export default class DonationSelection extends LightningElement {
 		this.addFee = e.currentTarget.checked
 	}
 
-	focusOutCCInput(e) {
-		e.currentTarget.maxLength = '20'
-		if (e.currentTarget.value) {
-			this.cc = e.currentTarget.value
-			let str = ''
-			let arr = e.currentTarget.value.split('')
-			for (let i = 0; i < arr.length; i++) {
-				str += (!i || (i % 4)) ? arr[i] : '-' + arr[i]
-			}
-			e.currentTarget.value = str	
-		}
-	}
-
-	focusInCCInput(e) {
-		e.currentTarget.maxLength = '16'
-		if (this.cc) {
-			e.currentTarget.value = this.cc
-		}
-	}
-
 	clickDonateBtn() {
 		if (this.validate()) {
-			console.log('send to payment processor');	
+			console.log('send to payment processor');
+			this.template.querySelector('c-payment-processor').sendToStripe()
 		}
-
-		// TODO: MOVE TO PAYMENT PROCESSOR
-		let params = {
-			'success_url': window.location.origin, // Will be set in a custom setting
-			'cancel_url': window.location.origin, // Will be set in a custom setting
-			'line_items[0][price_data][unit_amount]': Number(this.total) * 100,
-			'line_items[0][quantity]': 1,
-			'line_items[0][price_data][currency]': 'usd',
-			'line_items[0][price_data][product_data][name]': 'Donation',
-			'phone_number_collection[enabled]': true,
-			'billing_address_collection': 'required',
-			'mode': this.givingType === 'once' ? 'payment' : 'subscription',
-			'payment_method_types[0]': 'card'
-		}
-
-		if (this.givingType === 'month') {
-			params = {
-				...params,
-				'line_items[0][price_data][recurring][interval]': 'month'
-			}
-		}
-
-		let body = new URLSearchParams(Object.entries(params)).toString()
-
-		const response = fetch('https://api.stripe.com/v1/checkout/sessions', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-				Authorization: `Bearer ${this.settings.Stripe_API_Key__c}`,
-				'Accept-Encoding': "gzip, deflate, br'",
-				Accept: '*/*',
-			},
-			body: body
-		})
-		.then(resp => resp.json())
-		.then(repos => {
-			console.log(repos);
-			window.open(repos.url, '_blank')
-
-			// TODO: Handle record creation with Stripe Id...
-		})
-	}
-
-	clickBackBtn() {
-		this.page = amount
-		this.changeAmt = true
 	}
 
 	// # GETTERS/SETTERS
