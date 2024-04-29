@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>Is_Donation_Opportunity</name>
+        <label>Is Donation Opportunity</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_If_Donation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Donation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_Assignment</targetReference>
+            </connector>
+            <label>Check If Donation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Stage</name>
+        <label>Opportunity Stage</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Is_Donation_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_To_Queue_Members</targetReference>
+            </connector>
+            <label>Opportunity Closed Won</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity After Insert</label>
@@ -24,22 +71,38 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Task_Assignment</targetReference>
+            <targetReference>Opportunity_Stage</targetReference>
         </connector>
-        <filterFormula>AND( {!$Record.RecordType.DeveloperName} = &apos;Donation&apos;, ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;))</filterFormula>
+        <filterFormula>ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;)</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
     <subflows>
+        <name>Send_Email_To_Queue_Members</name>
+        <label>Send Email To Queue Members</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Is_Donation_Opportunity</targetReference>
+        </connector>
+        <flowName>Email_Alert_When_Grant_Is_Won</flowName>
+        <inputAssignments>
+            <name>QueueOfUsers</name>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
         <name>Task_Assignment</name>
         <label>Task Assignment</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
         <flowName>Assign_Task_After_Opportunity_is_Created</flowName>
         <inputAssignments>
             <name>AssignedToID</name>
