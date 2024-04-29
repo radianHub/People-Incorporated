@@ -4,7 +4,6 @@
     <customButtons>npsp__Refresh_Name</customButtons>
     <customButtons>npsp__Manage_Soft_Credits</customButtons>
     <excludeButtons>Share</excludeButtons>
-    <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
@@ -83,6 +82,18 @@
                 <behavior>Edit</behavior>
                 <field>EA_Team_Assignment__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>BB_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Constituent_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Stripe_Transaction_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -100,6 +111,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>npsp__Acknowledgment_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>npsp__Closed_Lost_Reason__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -183,11 +198,23 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>npsp__Tribute_Notification_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>npsp__Tribute_Notification_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>npsp__Honoree_Contact__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>npsp__Honoree_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>npsp__Honoree_Information__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -198,6 +225,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>npsp__Notification_Recipient_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>npsp__Notification_Recipient_Email__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -374,6 +405,11 @@
             <actionType>StandardButton</actionType>
             <sortOrder>10</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>OpportunityMultiAddToCadence</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -415,6 +451,15 @@
             </layoutItem>
         </relatedContentItems>
     </relatedContent>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>npsp__Engagement_Plan_Template__c</fields>
+        <fields>npsp__Status__c</fields>
+        <fields>npsp__Total_EP_Tasks__c</fields>
+        <fields>npsp__Completed_Tasks__c</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>npsp__Engagement_Plan__c.npsp__Opportunity__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <excludeButtons>AddContactRole</excludeButtons>
         <excludeButtons>OppContactRoleMultiAdd</excludeButtons>
@@ -485,6 +530,14 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CreatedDate</fields>
+        <fields>StepStatus</fields>
+        <fields>OriginalActor</fields>
+        <fields>Actor</fields>
+        <fields>Comments</fields>
+        <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
