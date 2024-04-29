@@ -117,6 +117,12 @@ export default class DonationSelection extends LightningElement {
 			.forEach(e => {
 				this.honoree[e.name] = e.value
 			})
+
+			this.honoree = {
+				...this.honoree,
+				hasHonor: this.honor,
+				honorType: this.honorSelection
+			}
 		}
 
 		return validLI && validLCB
@@ -181,7 +187,7 @@ export default class DonationSelection extends LightningElement {
 	clickDonateBtn() {
 		if (this.validate()) {
 			console.log('send to payment processor');
-			this.template.querySelector('c-payment-processor').sendToStripe()
+			this.template.querySelector('c-payment-processor').checkoutWithStripe()
 		}
 	}
 

@@ -2,12 +2,13 @@ import { LightningElement, api, wire } from "lwc";
 // import { CurrentPageReference } from 'lightning/navigation';
 
 import getSettings from '@salesforce/apex/paymentProcessorController.getSettings';
-import savePayment from '@salesforce/apex/paymentProcessorController.savePayment';
+import savePaymentIntent from '@salesforce/apex/paymentProcessorController.savePaymentIntent';
 
 export default class PaymentProcessor extends LightningElement {
 	@api recordId;
 	@api total;
 	@api givingType;
+	@api honoree;
 	settings;
 
 	// closeModal() {
@@ -29,15 +30,15 @@ export default class PaymentProcessor extends LightningElement {
 		.catch((e) => console.log(e))
 	}
 
-	savePayment(d) {
-		savePayment( {data: d} )
+	savePaymentIntent(d) {
+		savePaymentIntent( {data: d} )
 		.then(r => console.log(r))
 		.catch(e => console.log(e))
 	}
 
 	// # PRIVATE METHODS
 
-	@api sendToStripe() {	
+	@api checkoutWithStripe() {	
 		let params = {
 			'success_url': window.location.origin, // Will be set in a custom setting
 			'cancel_url': window.location.origin, // Will be set in a custom setting
@@ -76,19 +77,19 @@ export default class PaymentProcessor extends LightningElement {
 
 			let data = {
 				stripeId: repos.id,
-				amount: repos.amount_total,
+				amount: repos.amount_total / 100,
 				status: repos.status,
 				paymentMethod: repos.payment_method_types,
 				paymentStatus: repos.payment_status,
 				type: repos.mode,
-				expires: repos.expires_at
+				expires: repos.expires_at,
+				honor: this.honoree
 			}
 
-			this.savePayment(JSON.stringify(data))
+			console.log(data);
+			this.savePaymentIntent(JSON.stringify(data))
 
 			window.open(repos.url, '_blank')
-
-			// TODO: Handle record creation with Stripe Id...
 		})
 	}
 
