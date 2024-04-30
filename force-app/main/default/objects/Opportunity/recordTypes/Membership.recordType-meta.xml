@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Stock_Bond_Donation</fullName>
+    <fullName>Membership</fullName>
     <active>true</active>
-    <businessProcess>Stock%2FBond Donation</businessProcess>
-    <description>Stock/Bond Donation Received</description>
-    <label>Stock/Bond Donation</label>
+    <businessProcess>Membership</businessProcess>
+    <compactLayoutAssignment>NPSP_Membership_Compact_Layout_Unmanaged</compactLayoutAssignment>
+    <description>A membership record type</description>
+    <label>Membership</label>
     <picklistValues>
         <picklist>Acknowledgement_Letter__c</picklist>
         <values>
@@ -109,10 +110,6 @@
     </picklistValues>
     <picklistValues>
         <picklist>LeadSource</picklist>
-        <values>
-            <fullName>E-mail</fullName>
-            <default>false</default>
-        </values>
         <values>
             <fullName>Other</fullName>
             <default>false</default>
@@ -250,66 +247,6 @@
         </values>
         <values>
             <fullName>To Be Acknowledged</fullName>
-            <default>true</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>npsp__Gift_Strategy__c</picklist>
-        <values>
-            <fullName>New Donor</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Renewal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Upgrade</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>npsp__In_Kind_Type__c</picklist>
-        <values>
-            <fullName>Goods</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Services</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>npsp__Matching_Gift_Status__c</picklist>
-        <values>
-            <fullName>Potential</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Received</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Submitted</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>npsp__Notification_Preference__c</picklist>
-        <values>
-            <fullName>Do Not Notify</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Email</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Phone</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Postal Mail</fullName>
             <default>false</default>
         </values>
     </picklistValues>
