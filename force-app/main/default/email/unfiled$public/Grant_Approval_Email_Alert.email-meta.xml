@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to leadership team on new Grant that needs review</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Grant Approval Email Alert</name>
+    <style>none</style>
+    <subject>A new grant is ready for approval</subject>
+    <textOnly>A new grant for {!Opportunity.Account} is awaiting your approval. Please click the link below to open the opportunity and review.  https://peopleincorporated--dev.sandbox.lightning.force.com/lightning/r/Opportunity/{!Opportunity.Id}/view  1. After opening the record, hover over the Approval History related list 2. Click the Approval Grant Request with Status Pending 3. Click Approve or Reject on the request</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
