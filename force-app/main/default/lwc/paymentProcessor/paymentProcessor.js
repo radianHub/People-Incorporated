@@ -2,7 +2,6 @@ import { LightningElement, api, wire } from "lwc";
 // import { CurrentPageReference } from 'lightning/navigation';
 
 import getSettings from '@salesforce/apex/paymentProcessorController.getSettings';
-import savePaymentIntent from '@salesforce/apex/paymentProcessorController.savePaymentIntent';
 
 export default class PaymentProcessor extends LightningElement {
 	@api recordId;
@@ -59,6 +58,13 @@ export default class PaymentProcessor extends LightningElement {
 			}
 		}
 
+		if (this.honoree) {
+			params = {
+				...params,
+				'metadata[honoree]': JSON.stringify(this.honoree)
+			}
+		}
+
 		let body = new URLSearchParams(Object.entries(params)).toString()
 
 		const response = fetch('https://api.stripe.com/v1/checkout/sessions', {
@@ -74,21 +80,6 @@ export default class PaymentProcessor extends LightningElement {
 		.then(resp => resp.json())
 		.then(repos => {
 			console.log(repos);
-
-			let data = {
-				stripeId: repos.id,
-				amount: repos.amount_total / 100,
-				status: repos.status,
-				paymentMethod: repos.payment_method_types,
-				paymentStatus: repos.payment_status,
-				type: repos.mode,
-				expires: repos.expires_at,
-				honor: this.honoree
-			}
-
-			console.log(data);
-			this.savePaymentIntent(JSON.stringify(data))
-
 			window.open(repos.url, '_blank')
 		})
 	}

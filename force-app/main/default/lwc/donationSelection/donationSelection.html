@@ -138,7 +138,6 @@
 											name="Zip"
 											label="Zip Code"
 											value={honoree.Zip}
-											pattern="^\d{5}(?:[-\s]\d{4})?$"
 											max-length="10"
 											required={isHonor}>
 										</lightning-input>
@@ -157,7 +156,6 @@
 										label="Phone Number"
 										value={honoree.Phone}
 										placeholder="XXX-XXX-XXXX"
-										pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
 										required={isHonor}>
 									</lightning-input>
 								</template>
