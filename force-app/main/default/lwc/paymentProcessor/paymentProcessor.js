@@ -1,18 +1,18 @@
-import { LightningElement, api, wire } from "lwc";
-// import { CurrentPageReference } from 'lightning/navigation';
+import { LightningElement, api } from "lwc";
+import { CloseActionScreenEvent } from 'lightning/actions';
 
 import getSettings from '@salesforce/apex/paymentProcessorController.getSettings';
 
 export default class PaymentProcessor extends LightningElement {
-	@api recordId;
+	@api campaignId;
 	@api total;
 	@api givingType;
 	@api honoree;
 	settings;
 
-	// closeModal() {
-	// 	this.dispatchEvent(new CloseActionScreenEvent());
-	// }
+	closeModal() {
+		this.dispatchEvent(new CloseActionScreenEvent());
+	}
 
 	// # LIFECYCLE HOOKS
 
@@ -29,12 +29,6 @@ export default class PaymentProcessor extends LightningElement {
 		.catch((e) => console.log(e))
 	}
 
-	savePaymentIntent(d) {
-		savePaymentIntent( {data: d} )
-		.then(r => console.log(r))
-		.catch(e => console.log(e))
-	}
-
 	// # PRIVATE METHODS
 
 	@api checkoutWithStripe() {	
@@ -48,7 +42,8 @@ export default class PaymentProcessor extends LightningElement {
 			'phone_number_collection[enabled]': true,
 			'billing_address_collection': 'required',
 			'mode': this.givingType === 'once' ? 'payment' : 'subscription',
-			'payment_method_types[0]': 'card'
+			'payment_method_types[0]': 'card',
+			'metadata[campaignId]': this.campaignId
 		}
 
 		if (this.givingType === 'month') {

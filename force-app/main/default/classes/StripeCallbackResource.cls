@@ -51,6 +51,16 @@ global without sharing class StripeCallbackResource {
             insert con;
         }
 
+        // * IF CAMPAIGN ID IS INCLUDED CREATE CAMPAIGN MEMBER RECORD
+        if (sRes.data.objectz.metadata.campaignId != null) {
+            CampaignMember mem = new CampaignMember(
+                CampaignId = sRes.data.objectz.metadata.campaignId,
+                ContactId = con.Id,
+                Status = 'Donated'
+            );
+            insert mem;
+        }
+
         // * CHECK FOR DONATION HONOREE AND CREATE NEW CONTACT
         Contact hCon;
         if (honoree.hasHonor && honoree.hasHonor != null) {
@@ -84,6 +94,7 @@ global without sharing class StripeCallbackResource {
                     : [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'Donation'].Id,
                 AccountId = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
                 npsp__Primary_Contact__c = con.Id,
+                CampaignId = sRes.data.objectz.metadata.campaignId,
                 Stripe_Transaction_Id__c = sRes.data.objectz.id
             );
 
@@ -136,6 +147,7 @@ global without sharing class StripeCallbackResource {
                         : DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().day().toString(),
                     npe03__Next_Payment_Date__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().addMonths(1),
                     npsp__StartDate__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date(),
+                    npe03__Recurring_Donation_Campaign__c = sRes.data.objectz.metadata.campaignId,
                     Stripe_Subscription_Id__c = sRes.data.objectz.subscription
                 ); 
                 insert recur;

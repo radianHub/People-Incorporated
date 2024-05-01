@@ -1,11 +1,11 @@
-import { LightningElement, api, wire } from "lwc";
-// import { CloseActionScreenEvent } from 'lightning/actions';
+import { LightningElement, wire } from "lwc";
+import { CurrentPageReference } from 'lightning/navigation';
 
 import getDonationAmounts from '@salesforce/apex/DonationSelectionController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/DonationSelectionController.getProcessingFee';
 
 export default class DonationSelection extends LightningElement {
-	@api recordId;
+	campaignId;
 	settings;
 	processingFee;
 	donationAmounts;	
@@ -16,18 +16,18 @@ export default class DonationSelection extends LightningElement {
 	donationAmt = 0;
 	addFee = false;
 
-	// closeModal() {
-	// 	this.dispatchEvent(new CloseActionScreenEvent());
-	// }
-
 	// # LIFECYCLE HOOKS
 	
 	connectedCallback() {
 		this.getProcessingFee()	
 		this.getDonationAmounts()
+		this.campaignId = this.currentPageReference.state.c__campaign
 	}
 
 	// # APEX
+
+	@wire(CurrentPageReference)
+	currentPageReference;
 
 	getProcessingFee() {
 		getProcessingFee()
