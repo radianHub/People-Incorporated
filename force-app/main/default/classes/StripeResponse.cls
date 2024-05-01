@@ -136,6 +136,7 @@ public class StripeResponse{
 	}
 	public class cls_metadata { 
         public String honoree;
+        public String campaignId;
 	}
 	public class cls_rendering_options {
 	}
