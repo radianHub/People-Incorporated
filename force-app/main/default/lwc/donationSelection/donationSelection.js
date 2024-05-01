@@ -1,10 +1,12 @@
-import { LightningElement, wire } from "lwc";
+import { LightningElement, api, wire } from "lwc";
 import { CurrentPageReference } from 'lightning/navigation';
 
 import getDonationAmounts from '@salesforce/apex/DonationSelectionController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/DonationSelectionController.getProcessingFee';
 
 export default class DonationSelection extends LightningElement {
+	@api headerColor;
+	@api headerTextColor;
 	campaignId;
 	settings;
 	processingFee;
@@ -289,5 +291,14 @@ export default class DonationSelection extends LightningElement {
 
 	get selectedDonation() {
 		return this.donationAmt !== 0
+	}
+
+	get customTextColor() {
+		console.log(this.headerTextColor);
+		return 'color:' + this.headerTextColor + ';font-size:x-large;'
+	}
+
+	get customHeaderColor() {
+		return 'background-color:' + this.headerColor + ';'
 	}
 }
