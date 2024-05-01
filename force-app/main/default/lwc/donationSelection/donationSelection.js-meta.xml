@@ -7,10 +7,8 @@
 		<target>lightning__AppPage</target>
 		<target>lightning__HomePage</target>
 		<target>lightning__RecordPage</target>
-		<target>lightning__RecordAction</target>
-		<target>lightning__UtilityBar</target>
 		<target>lightningCommunity__Page</target>
-		<target>lightningCommunity__Page_Layout</target>
+		<target>lightningCommunity__Default</target>
 	</targets>
 	<targetConfigs>
 		<targetConfig targets="lightning__AppPage">
@@ -30,8 +28,9 @@
 				<supportedFormFactor type="Large"/>
 			</supportedFormFactors>
 		</targetConfig>
-		<targetConfig targets="lightning__RecordAction">
-			<actionType>ScreenAction</actionType>
+		<targetConfig targets="lightningCommunity__Default">
+			<property label="Header Banner Color" name="headerColor" type="Color" default="black"/>
+			<property label="Header Text Color" name="headerTextColor" type="Color" default="white"/>	
 		</targetConfig>
 	</targetConfigs>
 </LightningComponentBundle>

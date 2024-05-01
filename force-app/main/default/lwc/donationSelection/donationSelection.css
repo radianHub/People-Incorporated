@@ -3,6 +3,7 @@
     margin: 1em;
     border-radius: 15px;
     width: 27em;
+    box-shadow: 0em 0em 0.5em 0px black;
 }
 
 .container > div {

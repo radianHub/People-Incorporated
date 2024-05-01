@@ -1,12 +1,12 @@
 <!-- sldsValidatorIgnore -->
 <template>
-	<lightning-layout>
+	<lightning-layout horizontal-align="center">
 		<lightning-layout-item>
 			<div class="container">
-				<div class="header">
-					<p class="slds-text-heading_medium slds-text-align_center">Donation Amount</p>
+				<div class="header" style={customHeaderColor}>
+					<p class="slds-text-heading_medium slds-text-align_center" style={customTextColor}>Donation Amount</p>
 					<template lwc:if={noTotal}>
-						<p class="slds-text-heading_medium slds-text-align_center">${total}</p>
+						<p class="slds-text-heading_medium slds-text-align_center" style={customTextColor}>${total}</p>
 					</template>
 				</div>
 				<div class="items">
