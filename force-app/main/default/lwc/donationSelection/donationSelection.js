@@ -3,6 +3,7 @@ import { CurrentPageReference } from 'lightning/navigation';
 
 import getDonationAmounts from '@salesforce/apex/DonationSelectionController.getDonationAmounts';
 import getProcessingFee from '@salesforce/apex/DonationSelectionController.getProcessingFee';
+import getSettings from '@salesforce/apex/DonationSelectionController.getSettings';
 
 export default class DonationSelection extends LightningElement {
 	@api headerColor;
@@ -12,6 +13,8 @@ export default class DonationSelection extends LightningElement {
 	processingFee;
 	donationAmounts;	
 	givingType;
+	recurFreq;
+	showFreq = false;
 	honor = false;
 	honorSelection;
 	honoree = {};
@@ -21,7 +24,8 @@ export default class DonationSelection extends LightningElement {
 	// # LIFECYCLE HOOKS
 	
 	connectedCallback() {
-		this.getProcessingFee()	
+		this.getProcessingFee()
+		this.getSettings()
 		this.getDonationAmounts()
 		this.campaignId = this.currentPageReference.state.c__campaign
 	}
@@ -39,6 +43,12 @@ export default class DonationSelection extends LightningElement {
 			.catch((e) => {
 				console.log(e);
 			})
+	}
+
+	getSettings() {
+		getSettings()
+		.then((r) => {this.settings = r})
+		.catch((e) => console.log(e))
 	}
 
 	getDonationAmounts() {
@@ -74,6 +84,7 @@ export default class DonationSelection extends LightningElement {
 					}
 				});
 				this.givingType = 'once'
+				this.recurFreq = 'month'
 				console.log(this.donationAmounts)
 			})
 			.catch((e) => {
@@ -130,6 +141,55 @@ export default class DonationSelection extends LightningElement {
 		return validLI && validLCB
 	}
 
+	checkoutWithStripe() {	
+		let params = {
+			'success_url': window.location.origin, // Will be set in a custom setting
+			'cancel_url': window.location.origin, // Will be set in a custom setting
+			'line_items[0][price_data][unit_amount]': Number(this.total) * 100,
+			'line_items[0][quantity]': 1,
+			'line_items[0][price_data][currency]': 'usd',
+			'line_items[0][price_data][product_data][name]': 'Donation',
+			'phone_number_collection[enabled]': true,
+			'billing_address_collection': 'required',
+			'mode': this.givingType.isRecurring ? 'subscription' : 'payment',
+			'payment_method_types[0]': 'card',
+			'metadata[campaignId]': this.campaignId
+		}
+
+		if (this.givingType.isRecurring) {
+			params = {
+				...params,
+				'line_items[0][price_data][recurring][interval]': this.givingType.interval,
+				'line_items[0][price_data][recurring][interval_count]': this.givingType.intervalCount
+			}
+		}
+
+		if (this.honoree) {
+			params = {
+				...params,
+				'metadata[honoree]': JSON.stringify(this.honoree)
+			}
+		}
+
+		let body = new URLSearchParams(Object.entries(params)).toString()
+
+		const response = fetch('https://api.stripe.com/v1/checkout/sessions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+				Authorization: `Bearer ${this.settings.Stripe_API_Key__c}`,
+				'Accept-Encoding': "gzip, deflate, br'",
+				Accept: '*/*',
+			},
+			body: body
+		})
+		.then(resp => resp.json())
+		.then(repos => {
+			console.log(repos);
+			window.open(repos.url, '_blank')
+		})
+	}
+
 	// # HANDLERS
 
 	clickHonorCheckBox(e) {
@@ -154,6 +214,20 @@ export default class DonationSelection extends LightningElement {
 		this.focusBtn(btn)
 		
 		this.givingType = e.currentTarget.value;
+		this.showFreq = this.givingType === 'recur' ? true : false
+	}
+
+	clickFreqTypeBtn(e) {
+		this.template.querySelectorAll('.freqBtn').forEach(i => {
+			if (i.classList.contains('slds-button_brand')) {
+				this.unfocusBtn(i)
+			}
+		})
+
+		let btn = this.template.querySelector('#' + e.currentTarget.id)
+		this.focusBtn(btn)
+
+		this.recurFreq = e.currentTarget.value;
 	}
 
 	clickDonationAmtBtn(e) {
@@ -188,8 +262,51 @@ export default class DonationSelection extends LightningElement {
 
 	clickDonateBtn() {
 		if (this.validate()) {
+
+			let interval
+			let count;
+			if (this.showFreq) {
+				switch (this.recurFreq) {
+					case 'week':
+						interval = 'week'
+						count = 1
+						break
+					case 'biweek':
+						interval = 'week'
+						count = 2
+						break
+					case 'month':
+						interval = 'month'
+						count = 1
+						break
+					case 'quarter':
+						interval = 'month'
+						count = 3
+						break
+					case 'year':
+						interval = 'year'
+						count = 1
+						break
+					default:
+						interval = 'once'
+						count = 1
+						break
+				}	
+			} else {
+				interval = 'once'
+				count = 1
+			}
+
+			this.givingType = {
+				isRecurring: this.showFreq,
+				interval: interval,
+				intervalCount: count
+			}
+
+			console.log(this.givingType);
+
 			console.log('send to payment processor');
-			this.template.querySelector('c-payment-processor').checkoutWithStripe()
+			this.checkoutWithStripe()
 		}
 	}
 
@@ -265,8 +382,8 @@ export default class DonationSelection extends LightningElement {
 		return this.givingType === 'once'
 	}
 
-	get typeMonthly() {
-		return this.givingType === 'month'
+	get typeRecur() {
+		return this.givingType === 'recur'
 	}
 	
 	get fee() {
@@ -294,7 +411,6 @@ export default class DonationSelection extends LightningElement {
 	}
 
 	get customTextColor() {
-		console.log(this.headerTextColor);
 		return 'color:' + this.headerTextColor + ';font-size:x-large;'
 	}
 
