@@ -13,6 +13,7 @@ export default class DonationSelection extends LightningElement {
 	processingFee;
 	donationAmounts;	
 	givingType;
+	givingInterval;
 	recurFreq;
 	showFreq = false;
 	honor = false;
@@ -151,16 +152,16 @@ export default class DonationSelection extends LightningElement {
 			'line_items[0][price_data][product_data][name]': 'Donation',
 			'phone_number_collection[enabled]': true,
 			'billing_address_collection': 'required',
-			'mode': this.givingType.isRecurring ? 'subscription' : 'payment',
+			'mode': this.givingInterval.isRecurring ? 'subscription' : 'payment',
 			'payment_method_types[0]': 'card',
-			'metadata[campaignId]': this.campaignId
+			'metadata[campaignId]': this.campaignId ? this.campaignId : null
 		}
 
-		if (this.givingType.isRecurring) {
+		if (this.givingInterval.isRecurring) {
 			params = {
 				...params,
-				'line_items[0][price_data][recurring][interval]': this.givingType.interval,
-				'line_items[0][price_data][recurring][interval_count]': this.givingType.intervalCount
+				'line_items[0][price_data][recurring][interval]': this.givingInterval.interval,
+				'line_items[0][price_data][recurring][interval_count]': this.givingInterval.intervalCount
 			}
 		}
 
@@ -297,13 +298,13 @@ export default class DonationSelection extends LightningElement {
 				count = 1
 			}
 
-			this.givingType = {
+			this.givingInterval = {
 				isRecurring: this.showFreq,
 				interval: interval,
 				intervalCount: count
 			}
 
-			console.log(this.givingType);
+			console.log(this.givingInterval);
 
 			console.log('send to payment processor');
 			this.checkoutWithStripe()
@@ -379,6 +380,7 @@ export default class DonationSelection extends LightningElement {
 	}
 
 	get typeOnce() {
+		console.log(this.givingType);
 		return this.givingType === 'once'
 	}
 
