@@ -2,7 +2,7 @@
     background-color: white;
     margin: 1em;
     border-radius: 15px;
-    width: 27em;
+    width: 28em;
     box-shadow: 0em 0em 0.5em 0px black;
 }
 
@@ -22,15 +22,32 @@
 }
 
 .givingType {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 40% 40%;
     justify-content: space-evenly;
     justify-items: center;
-    column-gap: 15px;
+    column-gap: 15px; */
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-around;
+}
+
+.recurFreq {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 .typeBtn {
     width: 10em;
+    height: 3em;
+}
+
+.freqBtn {
+    width: 7em;
     height: 3em;
 }
 

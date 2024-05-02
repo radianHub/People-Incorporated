@@ -12,3 +12,6 @@ package.xml
 **/__tests__/**
 
 **/fields/Processing_Free_Percentage__c.field-meta.xml
+**/classes/paymentProcessorController.cls
+**/classes/paymentProcessorController.cls-meta.xml
+**/lwc/paymentProcessor/**

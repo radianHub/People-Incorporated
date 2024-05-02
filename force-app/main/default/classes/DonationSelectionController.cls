@@ -19,6 +19,11 @@ public with sharing class DonationSelectionController {
     }
 
     @AuraEnabled(cacheable=true)
+    public static Donation_Component__c getSettings(){
+        return Donation_Component__c.getOrgDefaults();
+    }
+
+    @AuraEnabled(cacheable=true)
     public static Processing_Fee__c getProcessingFee(){
         return Processing_Fee__c.getOrgDefaults();
     }

@@ -21,12 +21,56 @@
 						</button>
 						<button
 							class="typeBtn slds-button slds-button_neutral"
-							id="month"
-							name="month"
-							value="month"
+							id="recur"
+							name="recur"
+							value="recur"
 							onclick={clickDonationTypeBtn}>
-							<span>Monthly</span>
+							<span>Recurring</span>
 						</button>
+						<template lwc:if={showFreq}>
+							<div class="recurFreq">
+								<button
+									class="freqBtn slds-button slds-button_neutral"
+									id="week"
+									name="week"
+									value="week"
+									onclick={clickFreqTypeBtn}>
+									<span>Weekly</span>
+								</button>
+								<button
+									class="freqBtn slds-button slds-button_neutral"
+									id="biweek"
+									name="biweek"
+									value="biweek"
+									onclick={clickFreqTypeBtn}>
+									<span>Biweekly</span>
+								</button>
+								<button
+									class="freqBtn slds-button slds-button_brand"
+									id="month"
+									name="month"
+									value="month"
+									onclick={clickFreqTypeBtn}>
+									<span>Monthly</span>
+								</button>
+								<button
+									class="freqBtn slds-button slds-button_neutral"
+									id="quarter"
+									name="quarter"
+									value="quarter"
+									onclick={clickFreqTypeBtn}>
+									<span>Quarterly</span>
+								</button>
+								<button
+									class="freqBtn slds-button slds-button_neutral"
+									id="year"
+									name="year"
+									value="year"
+									onclick={clickFreqTypeBtn}>
+									<span>Yearly</span>
+								</button>
+							</div>
+						</template>
 					</div>
 					<template lwc:if={typeOnce}>
 						<div class="givingAmounts">
@@ -45,7 +89,7 @@
 							</template>
 						</div>
 					</template>
-					<template lwc:elseif={typeMonthly}>
+					<template lwc:elseif={typeRecur}>
 						<div class="givingAmounts">
 							<template
 								for:each={donationAmounts.month}
@@ -194,13 +238,6 @@
 						</lightning-button> -->
 					</div>
 				</div>
-				<c-payment-processor
-					record-id=""
-					total={total}
-					giving-type={givingType}
-					honoree={honoree}
-					campaign-id={campaignId}>
-				</c-payment-processor>
 			</div>
 		</lightning-layout-item>
 	</lightning-layout>
