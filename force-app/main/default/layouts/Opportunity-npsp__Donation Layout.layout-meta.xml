@@ -410,6 +410,11 @@
             <actionType>StandardButton</actionType>
             <sortOrder>11</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Share</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -471,6 +476,12 @@
         <fields>ContactEmail</fields>
         <fields>ContactAccountName</fields>
         <relatedList>RelatedContactRoleList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>npsp__Amount__c</fields>
+        <fields>npsp__Role__c</fields>
+        <relatedList>npsp__Account_Soft_Credit__c.npsp__Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <customButtons>npsp__Manage_Soft_Credits</customButtons>
