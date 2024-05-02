@@ -53,17 +53,26 @@ global without sharing class StripeCallbackResource {
 
         // * IF CAMPAIGN ID IS INCLUDED CREATE CAMPAIGN MEMBER RECORD
         if (sRes.data.objectz.metadata.campaignId != null) {
-            CampaignMember mem = new CampaignMember(
-                CampaignId = sRes.data.objectz.metadata.campaignId,
-                ContactId = con.Id,
-                Status = 'Donated'
-            );
-            insert mem;
+            List<CampaignMember> memList = [
+                SELECT Id 
+                FROM CampaignMember 
+                WHERE 
+                    CampaignId = :sRes.data.objectz.metadata.campaignId AND
+                    ContactId = :con.Id
+            ];
+            if (memList.size() == 0) {
+                CampaignMember mem = new CampaignMember(
+                    CampaignId = sRes.data.objectz.metadata.campaignId,
+                    ContactId = con.Id,
+                    Status = 'Donated'
+                );
+                insert mem; 
+            }
         }
 
         // * CHECK FOR DONATION HONOREE AND CREATE NEW CONTACT
         Contact hCon;
-        if (honoree.hasHonor && honoree.hasHonor != null) {
+        if (honoree?.hasHonor != null && honoree?.hasHonor) {
             hCon = new Contact(
                 RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Contact' AND DeveloperName = 'Standard'].Id,
                 FirstName = honoree.FirstName,
@@ -88,8 +97,8 @@ global without sharing class StripeCallbackResource {
                 Name = sRes.data.objectz.customer_details.name + ' - ' + DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().format(),
                 StageName = 'Pledged',
                 CloseDate = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date(),
-                Amount = sRes.data.objectz.amount_total / 100,
-                RecordTypeId = (sRes.data.objectz.amount_total / 100) >= 1000 
+                Amount = Decimal.valueOf(sRes.data.objectz.amount_total) / 100,
+                RecordTypeId = (Decimal.valueOf(sRes.data.objectz.amount_total) / 100) >= 1000 
                     ? [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'MajorGift'].Id
                     : [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'Donation'].Id,
                 AccountId = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
@@ -98,7 +107,7 @@ global without sharing class StripeCallbackResource {
                 Stripe_Transaction_Id__c = sRes.data.objectz.id
             );
 
-            if (honoree.hasHonor && honoree.hasHonor != null) {
+            if (honoree?.hasHonor != null && honoree?.hasHonor) {
                 opp.npsp__Honoree_Contact__c = hCon.Id;
             }
 
@@ -137,10 +146,10 @@ global without sharing class StripeCallbackResource {
                 recur = new npe03__Recurring_Donation__c(
                     npe03__Contact__c = con.Id,
                     npe03__Organization__c = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
-                    Name = fName + ' ' + lName + '$' + (sRes.data.objectz.amount_total / 100).toString() + ' - Recurring',
+                    Name = fName + ' ' + lName + '$' + (Decimal.valueOf(sRes.data.objectz.amount_total) / 100).toString() + ' - Recurring',
                     npe03__Date_Established__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date(),
                     npsp__RecurringType__c = 'Open',
-                    npe03__Amount__c = sRes.data.objectz.amount_total / 100,
+                    npe03__Amount__c = Decimal.valueOf(sRes.data.objectz.amount_total) / 100,
                     npe03__Installment_Period__c = 'Monthly',
                     npsp__Day_of_Month__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().day() == 31
                         ? 'Last_Day'
@@ -159,10 +168,10 @@ global without sharing class StripeCallbackResource {
                     WHERE npe03__Recurring_Donation__c = :recur.Id AND Stripe_Transaction_Id__c = null
                 ];
                 opp.Stripe_Transaction_Id__c = sRes.data.objectz.id;
-                opp.RecordTypeId = (sRes.data.objectz.amount_total / 100) >= 1000 
+                opp.RecordTypeId = (Decimal.valueOf(sRes.data.objectz.amount_total) / 100) >= 1000 
                     ? [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'MajorGift'].Id
                     : [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'Donation'].Id;
-                if (honoree.hasHonor && honoree.hasHonor != null) {
+                if (honoree?.hasHonor != null && honoree?.hasHonor) {
                     opp.npsp__Honoree_Contact__c = hCon.Id;
                 }
                 update opp;
