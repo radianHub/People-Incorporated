@@ -52,7 +52,7 @@ global without sharing class StripeCallbackResource {
         }
 
         // * IF CAMPAIGN ID IS INCLUDED CREATE CAMPAIGN MEMBER RECORD
-        if (sRes.data.objectz.metadata.campaignId != null) {
+        if (sRes.data.objectz.metadata.campaignId != 'undefined') {
             List<CampaignMember> memList = [
                 SELECT Id 
                 FROM CampaignMember 
