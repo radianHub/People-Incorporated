@@ -1,0 +1,22 @@
+<apex:component controller="ClosedWonOpportunities" access="global">
+    <apex:attribute name="accountId" type="String" description="Id of the Account" assignTo="{!accId}" access="global"/>
+    
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Close Date</th>
+            <th>Amount</th>
+        </tr>
+        <apex:repeat value="{!opportunities}" var="opp">
+            <tr>
+                <td>{!opp.Name}</td>
+                <apex:outputText value=" {0,date,EEE MMM d, yyyy}">
+                    <apex:param value="{!opp.CloseDate}"/>
+                </apex:outputText>
+                <td>{!opp.CloseDate}</td>
+                <td>{!opp.Amount}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+    <p>Total Amount: {!totalAmount}</p>
+</apex:component>
