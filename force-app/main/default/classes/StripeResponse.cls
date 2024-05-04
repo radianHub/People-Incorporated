@@ -48,7 +48,7 @@ public class StripeResponse{
 		public String payment_method_collection;	
 		public cls_payment_method_configuration_details payment_method_configuration_details;
 		public cls_payment_method_options payment_method_options;
-		public List<String> payment_method_types;
+		public String[] payment_method_types;
 		public String payment_status;	
 		public cls_phone_number_collection phone_number_collection;
 		public String recovered_from;
@@ -66,21 +66,80 @@ public class StripeResponse{
 		public String ui_mode;	
 		public String url;
 	}
+	
 	public class cls_after_expiration {
+		public cls_recovery recovery;
 	}
+	public class cls_recovery {
+		public Boolean allow_promotion_codes;
+		public Boolean enabled;
+		public Long expires_at;
+		public String url;
+	}
+
 	public class cls_automatic_tax {
 		public boolean enabled;
-		public String liability;
+		public cls_liability liability;
 		public String status;
 	}
+	public class cls_liability {
+		public String account;
+		public String type;
+	}
+
 	public class cls_consent {
+		public String promotions;
+		public String terms_of_service;
 	}
+
 	public class cls_consent_collection {
+		public cls_payment_method_reuse_agreement payment_method_reuse_agreement;
+		public String promotions;
+		public String terms_of_service;
 	}
+	public class cls_payment_method_reuse_agreement {
+		public String position;
+	}
+
 	public class cls_currency_conversion {
+		public Integer amount_subtotal;
+		public Integer amount_total;
+		public Decimal fx_rate;
+		public String source_currency;
 	}
+
 	public class cls_custom_fields {
+		public cls_dropdown dropdown;
+		public String key;
+		public cls_label label;
+		public cls_numeric numeric;
+		public Boolean optional;
+		public cls_text text;
+		public String type;
 	}
+	public class cls_dropdown {
+		public String value;
+		public cls_options options;
+	}
+	public class cls_options {
+		public String label;
+		public String value;
+	}
+	public class cls_label {
+		public String custom;
+		public String type;
+	}
+	public class cls_numeric {
+		public Integer maximum_length;
+		public Integer minimum_length;
+		public String value;
+	}
+	public class cls_text {
+		public Integer maximum_length;
+		public Integer minimum_length;
+		public String value;
+	}
+
 	public class cls_custom_text {
 		public cls_after_submit after_submit;
 		public cls_shipping_address shipping_address;
@@ -88,13 +147,18 @@ public class StripeResponse{
 		public cls_terms_of_service_acceptance terms_of_service_acceptance;
 	}
 	public class cls_after_submit {
+		public String message;
 	}
 	public class cls_shipping_address {
+		public String message;
 	}
 	public class cls_submit {
+		public String message;
 	}
 	public class cls_terms_of_service_acceptance {
+		public String message;
 	}
+
 	public class cls_customer_details {
 		public cls_address address;
 		public String email;	
@@ -112,64 +176,92 @@ public class StripeResponse{
 		public String state;	
 	}
 	public class cls_tax_ids {
+		public String type;
+		public String value;
 	}
+
     public class cls_invoice_creation {
 		public boolean enabled;
 		public cls_invoice_data invoice_data;
 	}
 	public class cls_invoice_data {
 		public cls_account_tax_ids account_tax_ids;
-		public cls_custom_fields custom_fields;
-		public cls_description description;
-		public cls_footer footer;
+		public cls_custom_invoice_fields custom_fields;
+		public String description;
+		public String footer;
 		public cls_issuer issuer;
 		public cls_metadata metadata;
 		public cls_rendering_options rendering_options;
 	}
 	public class cls_account_tax_ids {
+		public String[] account_tax_ids;
 	}
-	public class cls_description {
-	}
-	public class cls_footer {
+	public class cls_custom_invoice_fields {
+		public String name;
+		public String value;
 	}
 	public class cls_issuer {
+		public String account;
+		public String type;
 	}
 	public class cls_metadata { 
         public String honoree;
         public String campaignId;
+		public String recurrence;
 	}
 	public class cls_rendering_options {
+		public String amount_tax_display;
 	}
+
 	public class cls_payment_method_configuration_details {
+		public String id;
+		public String parent;
 	}
+
 	public class cls_payment_method_options {
 		public cls_card card;
 	}
 	public class cls_card {
 		public String request_three_d_secure;	
 	}
+
 	public class cls_phone_number_collection {
-		public boolean enabled;
+		public Boolean enabled;
 	}
+
 	public class cls_saved_payment_method_options {
+		public String[] allow_redisplay_filters;
+		public String payment_method_save;
 	}
+
 	public class cls_shipping_address_collection {
+		public String[] allowed_countries;
 	}
+
 	public class cls_shipping_cost {
+		public Integer amount_subtotal;
+		public Integer amount_tax;
+		public Integer amount_total;
+		public String shipping_rate;
+		public cls_taxes[] taxes;
 	}
-	public class cls_shipping_details {
-	}
-	public class cls_shipping_options {
-	}
+	public class cls_taxes {}
+
+	public class cls_shipping_details {}
+
+	public class cls_shipping_options {}
+
 	public class cls_total_details {
 		public Integer amount_discount;	
 		public Integer amount_shipping;	
 		public Integer amount_tax;	
 	}
+
 	public class cls_request {
 		public String id;
 		public String idempotency_key;
 	}
+
     public class cls_honoree {
         public String FirstName;
         public String LastName;
@@ -186,8 +278,14 @@ public class StripeResponse{
             return (cls_honoree) System.JSON.deserialize(json, cls_honoree.class);
         }
     }
-    
-	public static StripeResponse parse(String json){
-		return (StripeResponse) System.JSON.deserialize(json, StripeResponse.class);
+
+	public class cls_recurrence {
+		public Boolean isRecurring;
+		public String interval;
+		public Integer intervalCount;
+
+		public cls_recurrence parse(String json) {
+			return (cls_recurrence) System.JSON.deserialize(json, cls_recurrence.class);
+		}
 	}
 }
