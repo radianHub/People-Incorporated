@@ -1,4 +1,4 @@
-@RestResource(UrlMapping='/stripe')
+@RestResource(UrlMapping='/stripe-checkout')
 global without sharing class StripeCallbackResource {
     @HttpPost
     global static void doPost() {
@@ -6,16 +6,40 @@ global without sharing class StripeCallbackResource {
 
         // * REFORMAT JSON
         String formattedJSONString = d.replace('object', 'objectz');
-        formattedJSONString = formattedJSONString.replace('currency', 'currencyz');
 
         // * PARSE JSON RESPONSE
         StripeResponse sRes = (StripeResponse) JSON.deserialize(formattedJSONString, StripeResponse.class);
 
         // * PARSE HONOREE JSON
         StripeResponse.cls_honoree honoree = new StripeResponse.cls_honoree().parse(sRes.data.objectz.metadata.honoree);
+
+        // * PARSE RECURRENCE JSON
+        StripeResponse.cls_recurrence recurrence = new StripeResponse.cls_recurrence().parse(sRes.data.objectz.metadata.recurrence);
         
         System.debug(formattedJSONString);
         System.debug(honoree);
+        System.debug(recurrence);
+        System.debug(sRes.data.objectz.metadata.campaignId);
+        System.debug(sRes.data.objectz.subscription);
+
+        switch on recurrence.interval {
+            when 'week' {
+                recurrence.interval = 'Weekly';
+            }
+            when 'month' {
+                recurrence.interval = 'Monthly';
+            }
+            when 'year' {
+                recurrence.interval = 'Yearly';
+            }
+            when else {
+                recurrence.interval = 'Once'; 
+            }
+        }
+
+        sRes.data.objectz.metadata.campaignId = sRes.data.objectz.metadata.campaignId == 'undefined' 
+            ? null
+            : sRes.data.objectz.metadata.campaignId; 
 
         // * SPLIT CUSTOMER NAME -> FIRST NAME / LAST NAME
         List<String> name = sRes.data.objectz.customer_details.name.split(' ');
@@ -52,7 +76,7 @@ global without sharing class StripeCallbackResource {
         }
 
         // * IF CAMPAIGN ID IS INCLUDED CREATE CAMPAIGN MEMBER RECORD
-        if (sRes.data.objectz.metadata.campaignId != 'undefined') {
+        if (sRes.data.objectz.metadata.campaignId != null) {
             List<CampaignMember> memList = [
                 SELECT Id 
                 FROM CampaignMember 
@@ -79,7 +103,7 @@ global without sharing class StripeCallbackResource {
                 LastName = honoree.LastName,
                 Date_Matching__c = Date.today().format()
             );
-            if (honoree.honorType == 'memorial') {
+            if (honoree.honorType == 'honor') {
                 hCon.Email = honoree.Email;
                 hCon.Phone = honoree.Phone;
                 hCon.MailingStreet = honoree.Street;
@@ -145,12 +169,14 @@ global without sharing class StripeCallbackResource {
             if (recurList.size() == 0) {
                 recur = new npe03__Recurring_Donation__c(
                     npe03__Contact__c = con.Id,
-                    npe03__Organization__c = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
+                    // npe03__Organization__c = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
                     Name = fName + ' ' + lName + '$' + (Decimal.valueOf(sRes.data.objectz.amount_total) / 100).toString() + ' - Recurring',
                     npe03__Date_Established__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date(),
                     npsp__RecurringType__c = 'Open',
                     npe03__Amount__c = Decimal.valueOf(sRes.data.objectz.amount_total) / 100,
-                    npe03__Installment_Period__c = 'Monthly',
+                    npe03__Installment_Period__c = recurrence.interval,
+                    npsp__InstallmentFrequency__c = recurrence.intervalCount,
+                    npsp__PaymentMethod__c = sRes.data.objectz.payment_method_types[0].capitalize(),
                     npsp__Day_of_Month__c = DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().day() == 31
                         ? 'Last_Day'
                         : DateTime.newInstance(((Long) sRes.data.objectz.created) * 1000).date().day().toString(),
@@ -167,7 +193,7 @@ global without sharing class StripeCallbackResource {
                     FROM Opportunity
                     WHERE npe03__Recurring_Donation__c = :recur.Id AND Stripe_Transaction_Id__c = null
                 ];
-                opp.Stripe_Transaction_Id__c = sRes.data.objectz.id;
+                opp.Stripe_Transaction_Id__c = sRes.data.objectz.invoice;
                 opp.RecordTypeId = (Decimal.valueOf(sRes.data.objectz.amount_total) / 100) >= 1000 
                     ? [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'MajorGift'].Id
                     : [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'Donation'].Id;

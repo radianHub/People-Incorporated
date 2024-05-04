@@ -154,7 +154,8 @@ export default class DonationSelection extends LightningElement {
 			'billing_address_collection': 'required',
 			'mode': this.givingInterval.isRecurring ? 'subscription' : 'payment',
 			'payment_method_types[0]': 'card',
-			'metadata[campaignId]': this.campaignId ? this.campaignId : null
+			'metadata[campaignId]': this.campaignId,
+			'metadata[recurrence]': JSON.stringify(this.givingInterval)
 		}
 
 		if (this.givingInterval.isRecurring) {
