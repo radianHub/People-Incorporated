@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>npe03__Recurring_Donation__c.npe03__Amount__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Recurring_Donation_Campaign__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Contact__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Date_Established__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npsp__Day_of_Month__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Donor_Name__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Last_Payment_Date__c</field>
+    </columns>
+    <columns>
+        <field>npe03__Recurring_Donation__c.npe03__Next_Payment_Date__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>All Recurring Donations Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$npe03__Recurring_Donation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>npe03__Recurring_Donation__c.npe03__Date_Established__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

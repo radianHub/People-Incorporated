@@ -97,6 +97,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Grant_Loss_Reason__c</picklist>
+        <values>
+            <fullName>Declined to Apply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not A Fit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
             <fullName>E-mail</fullName>
