@@ -1,3 +1,5 @@
+// TODO: FIX ROUNDING ON DONATION AMOUNT BUTTONS
+// TODO: USE CUSTOM SETTING URLS CALLOUT
 import { LightningElement, api, wire } from "lwc";
 import { CurrentPageReference } from 'lightning/navigation';
 
@@ -38,12 +40,8 @@ export default class DonationSelection extends LightningElement {
 
 	getProcessingFee() {
 		getProcessingFee()
-			.then((r) => {
-				this.processingFee = r;
-			})
-			.catch((e) => {
-				console.log(e);
-			})
+			.then((r) => {this.processingFee = r;})
+			.catch((e) => {console.log(e)})
 	}
 
 	getSettings() {
@@ -62,10 +60,11 @@ export default class DonationSelection extends LightningElement {
 				r.forEach(e => {
 					let amountArr = []
 					if (e.Auto_Calculate__c) {
-						let currentAmount = e.Starting_Amount__c
-						for (let i = 0; i < 6; i++) {						
+						let currentAmount = e.Starting_Amount__c.toFixed(2)
+						for (let i = 0; i < 6; i++) {
 							amountArr.push(currentAmount)
-							currentAmount += currentAmount * (e.Percentage_to_Auto_Calculate__c * 0.01)
+							currentAmount = Math.round(currentAmount * (1 + (e.Percentage_to_Auto_Calculate__c * 0.01))).toFixed(2)
+							console.log(currentAmount);
 						}
 					} else {
 						amountArr.push(
@@ -78,7 +77,7 @@ export default class DonationSelection extends LightningElement {
 						)
 					}
 	
-					if (e.DeveloperName === 'Monthly') {
+					if (e.DeveloperName === 'Recurring') {
 						this.donationAmounts.month = amountArr
 					} else if (e.DeveloperName === 'One_Time') {
 						this.donationAmounts.once = amountArr

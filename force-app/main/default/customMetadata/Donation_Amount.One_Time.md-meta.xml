@@ -32,7 +32,7 @@
     </values>
     <values>
         <field>Percentage_to_Auto_Calculate__c</field>
-        <value xsi:type="xsd:double">50.0</value>
+        <value xsi:type="xsd:double">100.0</value>
     </values>
     <values>
         <field>Starting_Amount__c</field>
