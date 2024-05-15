@@ -4,12 +4,7 @@
     <active>true</active>
     <errorConditionFormula>AND(
 
-  OR(
-
-    ISPICKVAL (StageName, &quot;Closed Lost&quot;),
-    ISPICKVAL (StageName, &quot;Declined&quot;)
-
-  ),
+  ISPICKVAL (StageName, &quot;Declined&quot;),
 
   ISBLANK (TEXT(Grant_Loss_Reason__c))
 
