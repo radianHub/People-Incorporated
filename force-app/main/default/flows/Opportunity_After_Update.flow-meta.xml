@@ -42,6 +42,13 @@
                     <stringValue>Donation</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Assign_Task</targetReference>
             </connector>
