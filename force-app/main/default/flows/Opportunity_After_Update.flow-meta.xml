@@ -17,7 +17,7 @@
                 <leftValueReference>$Record.StageName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Closed Won</stringValue>
+                    <stringValue>Awarded</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -76,10 +76,6 @@
         <connector>
             <targetReference>Grant_is_Won</targetReference>
         </connector>
-        <filterFormula>AND(
-ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;),
-{!$Record.RecordType.DeveloperName} = &apos;Grant&apos;
-)</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
@@ -119,6 +115,12 @@ ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;),
             <targetReference>Is_Donation_Opportunity</targetReference>
         </connector>
         <flowName>Email_Alert_When_Grant_Is_Won</flowName>
+        <inputAssignments>
+            <name>opportunityId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <name>QueueOfUsers</name>
             <value>
