@@ -17,6 +17,13 @@
                     <stringValue>Stock_Bond_Donation</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.npe01__Paid__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Related_Opportunity</targetReference>
             </connector>
