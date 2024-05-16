@@ -3,11 +3,15 @@
     <fullName>Stock%2FBond Donation</fullName>
     <isActive>true</isActive>
     <values>
+        <fullName>Actualized</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Closed Lost</fullName>
         <default>false</default>
     </values>
     <values>
-        <fullName>Closed Won</fullName>
+        <fullName>Committed</fullName>
         <default>false</default>
     </values>
     <values>
