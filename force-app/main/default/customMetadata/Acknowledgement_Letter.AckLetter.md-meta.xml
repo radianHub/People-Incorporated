@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>AckLetter</label>
+    <protected>false</protected>
+    <values>
+        <field>Letter__c</field>
+        <value xsi:type="xsd:string">«Date»;
+«Addresses»;
+«Organization_Name»;
+«Address_line_1»;
+«City» «State» «ZIP_Code»;
+;
+Dear «Salutation»,; 
+;
+We may never find the words to express how grateful we are to you, but we will start with thank you! Your gift makes an incredible difference in our ability to reach community members in need of mental health support.;
+;
+
+&lt;strong&gt;One in five&lt;/strong&gt; individuals are struggling with their mental health. Not all of these people live in cities where services are accessible, or have health insurance that covers mental health care, or even have a supportive friend in their lives to encourage them to seek help. &lt;strong&gt;This is where your gift to People Incorporated makes a difference.&lt;/strong&gt;;
+;
+Your gift of «Amount» given on «Gift_date» affirms that &lt;strong&gt;mental health is community health&lt;/strong&gt;, and that equitable and person-centered mental health care results in benefits for us all. It reaches out a helping hand to a neighbor, tells them that they are seen, and assures them that we are all in this together.;
+;
+
+Thanks to YOU, this year, People Incorporated will support more of your neighbors in need of compassionate mental health care. Each year, your gifts support over 10,000 children, adults, families, and &lt;strong&gt;neighbors&lt;/strong&gt; who are silently struggling in our communities.;
+;
+
+You are a vital part of the People Incorporated family. Your gifts represent hope, and your impact is deeply felt.;
+;
+
+With sincerest appreciation,
+Rachel Hickok, MNM;
+Director of Development;
+;
+
+P.S. Interested in going green? Email us at give@peopleincorporated.org to opt out of printed gift acknowledgements and receive them in digital form only.;
+;
+&lt;em&gt;People Incorporated is a not-for-profit organization under section 501(c)(3) of the IRS Code. Contributions are tax-deductible to the fullest extent provided by the law. No goods or services were provided in exchange for this gift.&lt;/em&gt;;</value>
+    </values>
+</CustomMetadata>

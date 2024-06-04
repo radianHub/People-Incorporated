@@ -1,0 +1,20 @@
+<apex:page controller="OpportunityHandler" showHeader="false">
+    <style>
+        .btn, form, body, html {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+        .btn {
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            cursor: pointer !important;
+            margin-left: 40% !important;
+            display: block !important; 
+        }
+    </style>
+
+    <apex:form >
+        <apex:commandButton styleClass="btn" value="Download Email" action="{!navigateToPage}" />
+    </apex:form>
+</apex:page>

@@ -1,0 +1,6 @@
+<!-- Visualforce Email Template -->
+<messaging:emailTemplate subject="Closed Won Opportunities for Account: {!relatedTo.Name}" recipientType="User" relatedToType="Account">
+    <messaging:htmlEmailBody >
+        <c:ClosedWonOpportunitiesEmailTemplate accountId="{!relatedTo.Id}"/>
+    </messaging:htmlEmailBody> 
+</messaging:emailTemplate>

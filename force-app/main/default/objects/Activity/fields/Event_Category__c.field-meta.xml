@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Event Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Luncheon</fullName>
+                <default>false</default>
+                <label>Annual Luncheon</label>
+            </value>
+            <value>
+                <fullName>Artability</fullName>
+                <default>false</default>
+                <label>Artability</label>
+            </value>
+            <value>
+                <fullName>CAC</fullName>
+                <default>false</default>
+                <label>CAC</label>
+            </value>
+            <value>
+                <fullName>Changing Minds Tour</fullName>
+                <default>false</default>
+                <label>Changing Minds Tour</label>
+            </value>
+            <value>
+                <fullName>Fashion Fighting Stigma</fullName>
+                <default>false</default>
+                <label>Fashion Fighting Stigma</label>
+            </value>
+            <value>
+                <fullName>Gala</fullName>
+                <default>false</default>
+                <label>Gala</label>
+            </value>
+            <value>
+                <fullName>Gratitude</fullName>
+                <default>false</default>
+                <label>Gratitude</label>
+            </value>
+            <value>
+                <fullName>Postage</fullName>
+                <default>false</default>
+                <label>Postage</label>
+            </value>
+            <value>
+                <fullName>Printing</fullName>
+                <default>false</default>
+                <label>Printing</label>
+            </value>
+            <value>
+                <fullName>Social Bash</fullName>
+                <default>false</default>
+                <label>Social Bash</label>
+            </value>
+            <value>
+                <fullName>Training Institute</fullName>
+                <default>false</default>
+                <label>Training Institute</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

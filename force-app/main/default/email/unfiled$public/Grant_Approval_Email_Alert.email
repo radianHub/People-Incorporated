@@ -1,0 +1,7 @@
+A new grant for {!Opportunity.Account} is awaiting your approval. Please click the link below to open the opportunity and review.</br>
+</br>
+https://peopleincorporated--dev.sandbox.lightning.force.com/lightning/r/Opportunity/{!Opportunity.Id}/view</br>
+</br>
+1. After opening the record, hover over the Approval History related list</br>
+2. Click the Approval Grant Request with Status Pending</br>
+3. Click Approve or Reject on the request
