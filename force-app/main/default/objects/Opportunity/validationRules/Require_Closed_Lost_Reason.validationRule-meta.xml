@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Closed_Lost_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+  ISPICKVAL (StageName, &quot;Declined&quot;),
+
+  ISBLANK (TEXT(Grant_Loss_Reason__c))
+
+)</errorConditionFormula>
+    <errorMessage>Opportunity stage is loss, please choose a value in Grant Loss Reason field</errorMessage>
+</ValidationRule>
