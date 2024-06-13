@@ -143,8 +143,8 @@ export default class DonationSelection extends LightningElement {
 
 	checkoutWithStripe() {	
 		let params = {
-			'success_url': window.location.origin, // Will be set in a custom setting
-			'cancel_url': window.location.origin, // Will be set in a custom setting
+			'success_url': this.settings.Success_Redirect__c, // Will be set in a custom setting
+			'cancel_url': this.settings.Failure_Redirect__c, // Will be set in a custom setting
 			'line_items[0][price_data][unit_amount]': Number(this.total) * 100,
 			'line_items[0][quantity]': 1,
 			'line_items[0][price_data][currency]': 'usd',
@@ -397,7 +397,7 @@ export default class DonationSelection extends LightningElement {
 	get total() {
 		return this.addFee 
 			? (Number(this.donationAmt) + Number(this.fee)).toFixed(2).toString()
-			: Number(this.donationAmt).toString() + '.00'
+			: Number(this.donationAmt).toFixed(2).toString()
 	}
 
 	get noTotal() {
