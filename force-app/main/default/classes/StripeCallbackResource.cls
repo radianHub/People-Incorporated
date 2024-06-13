@@ -63,7 +63,7 @@ global without sharing class StripeCallbackResource {
                 FirstName = fName,
                 LastName = lName, 
                 Email = sRes.data.objectz.customer_details.email,
-                Phone = sRes.data.objectz.customer_details.phone,
+                Phone = sRes.data.objectz.customer_details.phone.removeStart('+1'),
                 MailingStreet = sRes.data.objectz.customer_details.address.line2 == null 
                     ? sRes.data.objectz.customer_details.address.line1
                     : sRes.data.objectz.customer_details.address.line1 + ' ' + sRes.data.objectz.customer_details.address.line2,
@@ -101,16 +101,14 @@ global without sharing class StripeCallbackResource {
                 RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Contact' AND DeveloperName = 'Standard'].Id,
                 FirstName = honoree.FirstName,
                 LastName = honoree.LastName,
-                Date_Matching__c = Date.today().format()
+                Date_Matching__c = Date.today().format(),
+                Email = honoree.Email,
+                Phone = honoree.Phone,
+                MailingStreet = honoree.Street,
+                MailingCity = honoree.City,
+                MailingState = honoree.State,
+                MailingPostalCode = honoree.Zip
             );
-            if (honoree.honorType == 'honor') {
-                hCon.Email = honoree.Email;
-                hCon.Phone = honoree.Phone;
-                hCon.MailingStreet = honoree.Street;
-                hCon.MailingCity = honoree.City;
-                hCon.MailingState = honoree.State;
-                hCon.MailingPostalCode = honoree.Zip;
-            }
             insert hCon;
         }
 
