@@ -111,7 +111,7 @@
 						<lightning-input
 							data-id="otherAmt"
 							type="number"
-							label="Other Amount"
+							label="Amount"
 							name="otherAmount"
 							formatter="currency"
 							step="0.01"
@@ -143,66 +143,66 @@
 										type="text"
 										name="FirstName"
 										label="First Name"
-										value={honoree.FirstName}
-										required={honor}>
+										value={honoree.FirstName}>
+										<!-- required={honor} -->
 									</lightning-input>
 									<lightning-input
 										type="text"
 										name="LastName"
 										label="Last Name"
-										value={honoree.LastName}
-										required={honor}>
+										value={honoree.LastName}>
+										<!-- required={honor} -->
 									</lightning-input>
 								</div>
-								<template lwc:if={isHonor}>
+								<lightning-input
+									type="text"
+									name="Street"
+									label="Address"
+									value={honoree.Street}>
+									<!-- required={isHonor} -->
+								</lightning-input>
+								<lightning-input
+									type="text"
+									name="City"
+									label="City"
+									value={honoree.City}>
+									<!-- required={isHonor} -->
+								</lightning-input>
+								<div class="honorCol">
+									<lightning-combobox
+										name="State"
+										label="State"
+										value={honoree.State}
+										options={stateOptions}>
+										<!-- required={isHonor} -->
+									</lightning-combobox>
 									<lightning-input
 										type="text"
-										name="Street"
-										label="Address"
-										value={honoree.Street}
-										required={isHonor}>
+										name="Zip"
+										label="Zip Code"
+										value={honoree.Zip}
+										max-length="10">
+										<!-- required={isHonor} -->
 									</lightning-input>
-									<lightning-input
-										type="text"
-										name="City"
-										label="City"
-										value={honoree.City}
-										required={isHonor}>
-									</lightning-input>
-									<div class="honorCol">
-										<lightning-combobox
-											name="State"
-											label="State"
-											value={honoree.State}
-											options={stateOptions}
-											required={isHonor}>
-										</lightning-combobox>
-										<lightning-input
-											type="text"
-											name="Zip"
-											label="Zip Code"
-											value={honoree.Zip}
-											max-length="10"
-											required={isHonor}>
-										</lightning-input>
-									</div>
-									<lightning-input
-										type="email"
-										name="Email"
-										label="Email Address"
-										value={honoree.Email}
-										placeholder="example@domain.com"
-										required={isHonor}>
-									</lightning-input>
-									<lightning-input
-										type="tel"
-										name="Phone"
-										label="Phone Number"
-										value={honoree.Phone}
-										placeholder="XXX-XXX-XXXX"
-										required={isHonor}>
-									</lightning-input>
-								</template>
+								</div>
+								<lightning-input
+									type="email"
+									name="Email"
+									label="Email Address"
+									value={honoree.Email}
+									placeholder="example@domain.com">
+									<!-- required={isHonor} -->
+								</lightning-input>
+								<lightning-input
+									type="tel"
+									name="Phone"
+									label="Phone Number"
+									value={honoree.Phone}
+									placeholder="XXX-XXX-XXXX">
+									<!-- required={isHonor} -->
+								</lightning-input>
+								<!-- <template lwc:if={isHonor}>
+								</template> -->
 							</div>
 						</template>
 					</div>
