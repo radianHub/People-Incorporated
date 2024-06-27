@@ -21,6 +21,7 @@ export default class DonationSelection extends LightningElement {
 	honor = false;
 	honorSelection;
 	honoree = {};
+	anonymous = false;
 	donationAmt = 0;
 	addFee = false;
 
@@ -154,7 +155,8 @@ export default class DonationSelection extends LightningElement {
 			'mode': this.givingInterval.isRecurring ? 'subscription' : 'payment',
 			'payment_method_types[0]': 'card',
 			'metadata[campaignId]': this.campaignId,
-			'metadata[recurrence]': JSON.stringify(this.givingInterval)
+			'metadata[recurrence]': JSON.stringify(this.givingInterval),
+			'metadata[anonymous]': this.anonymous
 		}
 
 		if (this.givingInterval.isRecurring) {
@@ -198,6 +200,10 @@ export default class DonationSelection extends LightningElement {
 		if (this.honor) {
 			this.honorSelection = 'honor'
 		}
+	}
+
+	clickAnonymousCheckbox(e) {
+		this.anonymous = e.detail.checked
 	}
 
 	honorGroupChanged(e) {

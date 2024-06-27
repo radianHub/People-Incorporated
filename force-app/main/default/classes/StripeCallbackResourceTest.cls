@@ -427,6 +427,7 @@ private class StripeCallbackResourceTest {
 		'      "metadata": {'+
 		'        "campaignId": "undefined",'+
 		'        "honoree": "{\\"FirstName\\":\\"Jack\\",\\"LastName\\":\\"Sparrow\\",\\"Street\\":\\"123 Test Ave\\",\\"City\\":\\"Test\\",\\"Zip\\":\\"12345\\",\\"Email\\":\\"jack@sparrow.com\\",\\"Phone\\":\\"1239874561\\",\\"State\\":\\"Arizona\\",\\"hasHonor\\":true,\\"honorType\\":\\"honor\\"}",'+
+		'        "anonymous": "true",'+
 		'        "recurrence": "{\\"isRecurring\\":false,\\"interval\\":\\"once\\",\\"intervalCount\\":1}"'+
 		'      },'+
 		'      "mode": "payment",'+

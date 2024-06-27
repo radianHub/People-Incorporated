@@ -122,6 +122,16 @@
 						<lightning-input
 							class="honorGroup"
 							type="checkbox"
+							label="I would like the gift to remain anonymous"
+							name="anonymous"
+							checked={anonymous}
+							onchange={clickAnonymousCheckbox}>
+						</lightning-input>
+					</div>
+					<div class="honor">
+						<lightning-input
+							class="honorGroup"
+							type="checkbox"
 							label="My gift is in honor or memory of someone."
 							name="honor"
 							checked={honor}
