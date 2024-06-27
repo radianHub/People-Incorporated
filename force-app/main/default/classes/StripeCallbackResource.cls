@@ -126,7 +126,8 @@ global without sharing class StripeCallbackResource {
                 AccountId = [SELECT AccountId FROM Contact WHERE Id = :con.Id].AccountId,
                 npsp__Primary_Contact__c = con.Id,
                 CampaignId = sRes.data.objectz.metadata.campaignId,
-                Stripe_Transaction_Id__c = sRes.data.objectz.id
+                Stripe_Transaction_Id__c = sRes.data.objectz.id,
+                isPrivate = sRes.data.objectz.metadata.anonymous == 'true' ? true : false
             );
 
             if (honoree?.hasHonor != null && honoree?.hasHonor) {
@@ -187,10 +188,11 @@ global without sharing class StripeCallbackResource {
 
                 // * QUERY FOR NEW OPP TO ASSIGN TRANSACTION ID
                 Opportunity opp = [
-                    SELECT Id, Stripe_Transaction_Id__c, npsp__Honoree_Contact__c, RecordTypeId
+                    SELECT Id, Stripe_Transaction_Id__c, npsp__Honoree_Contact__c, RecordTypeId, isPrivate
                     FROM Opportunity
                     WHERE npe03__Recurring_Donation__c = :recur.Id AND Stripe_Transaction_Id__c = null
                 ];
+                opp.isPrivate = sRes.data.objectz.metadata.anonymous == 'true' ? true : false;
                 opp.Stripe_Transaction_Id__c = sRes.data.objectz.invoice;
                 opp.RecordTypeId = (Decimal.valueOf(sRes.data.objectz.amount_total) / 100) >= 1000 
                     ? [SELECT Id FROM RecordType WHERE SObjectType = 'Opportunity' AND DeveloperName = 'MajorGift'].Id
