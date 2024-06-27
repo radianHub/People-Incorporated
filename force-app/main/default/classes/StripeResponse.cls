@@ -208,6 +208,7 @@ public class StripeResponse{
         public String honoree;
         public String campaignId;
 		public String recurrence;
+		public String anonymous;
 	}
 	public class cls_rendering_options {
 		public String amount_tax_display;
