@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Legal Guardian</fullName>
+        <default>false</default>
+        <label>Legal Guardian</label>
+    </customValue>
+    <customValue>
+        <fullName>Parent (Non-Legal Guardian)</fullName>
+        <default>false</default>
+        <label>Parent (Non-Legal Guardian)</label>
+    </customValue>
+    <customValue>
+        <fullName>Family</fullName>
+        <default>false</default>
+        <label>Family</label>
+    </customValue>
+    <customValue>
+        <fullName>Friend</fullName>
+        <default>false</default>
+        <label>Friend</label>
+    </customValue>
+    <customValue>
+        <fullName>Case Manager</fullName>
+        <default>false</default>
+        <label>Case Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Health Care Provider</fullName>
+        <default>false</default>
+        <label>Health Care Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Relationship to Client</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
