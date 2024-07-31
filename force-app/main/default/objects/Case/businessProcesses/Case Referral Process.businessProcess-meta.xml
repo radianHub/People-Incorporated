@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case Referral Process</fullName>
+    <isActive>false</isActive>
+    <values>
+        <fullName>Accepted %28Converted%29</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>After Comp Follow Up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Background Check</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Care Coordination</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed With Out Services</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Comp Needed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Denied</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>E-mail Sent</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>First Call Attempt</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Future Follow Up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Initial Reachout</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Intake Complete</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Intake Packet Sent</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Intake Scheduled</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Interview</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>MNITS L%2FU</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Navigation</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New Referral</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>No Contact Made</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ongoing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Prescreen</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Prescreen Call 1</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Prescreen Call 2</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Qualification</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Record Review</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Referred External</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Referred to OMH</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Released</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Reminder Call</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Screening Complete</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Second Call Attempt</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Semi-Qualified</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Waitlist</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Withdrawn</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>
