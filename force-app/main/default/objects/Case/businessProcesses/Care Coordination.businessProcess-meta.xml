@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Care Coordination</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Accepted %28Converted%29</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed With Out Services</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Future Follow Up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Navigation</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New Referral</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>No Contact Made</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Withdrawn</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>
