@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard</fullName>
+    <active>true</active>
+    <label>Standard</label>
+    <picklistValues>
+        <picklist>County__c</picklist>
+        <values>
+            <fullName>Aitkin County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anoka County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Becker County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beltrami County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benton County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Big Stone County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue Earth County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carlton County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carver County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cass County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chippewa County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chisago County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clay County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clearwater County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cook County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cottonwood County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crow Wing County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dakota County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dodge County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douglas County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faribault County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fillmore County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeborn County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodhue County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grant County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hennepin County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hubbard County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isanti County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Itasca County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jackson County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kanabec County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kandiyohi County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kittson County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koochiching County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lac qui Parle County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lake County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lake of the Woods County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Le Sueur County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mahnomen County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Martin County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McLeod County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeker County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mille Lacs County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morrison County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mower County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Murray County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nicollet County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nobles County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norman County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olmsted County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otter Tail County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennington County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pine County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipestone County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polk County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pope County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ramsey County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red Lake County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redwood County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renville County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rice County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rock County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roseau County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scott County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sherburne County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sibley County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St%2E Louis County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stearns County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steele County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stevens County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swift County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Todd County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traverse County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wabasha County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wadena County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waseca County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watonwan County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wilkin County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winona County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wright County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow Medicine County</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GW_Volunteers__Volunteer_Availability__c</picklist>
+        <values>
+            <fullName>Afternoon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekdays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GW_Volunteers__Volunteer_Skills__c</picklist>
+        <values>
+            <fullName>Computer usage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundraising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landscaping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual labor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GW_Volunteers__Volunteer_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Sign Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospective</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender_Identity__c</picklist>
+        <values>
+            <fullName>Agender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cis Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cis Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Refused</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nonbinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Binary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not To Say</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Housing_Status__c</picklist>
+        <values>
+            <fullName>Corrections Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homeless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent Living</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential %28in facility%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Type__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Pay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Int_Ext__c</picklist>
+        <values>
+            <fullName>External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Intake_Outcome__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beds Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COVID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied by Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intake Processing Limitations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Ready to Intake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred to Another Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Legal_Sex__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marital_Status__c</picklist>
+        <values>
+            <fullName>Divorced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Married</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Separated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widowed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mx%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Contact_Person__c</picklist>
+        <values>
+            <fullName>Emergency Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent%2FGuardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Parent%2FGuardian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pronoun__c</picklist>
+        <values>
+            <fullName>He%2FHim%2FHis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>He%2FHim%2FThey%2FThem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer%2FHers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer%2FThey%2FThem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>They%2FThem%2FTheirs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ze%2FZir</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Referral_Type__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_to_Client__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent %28Non-Legal Guardian%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Suffix__c</picklist>
+        <values>
+            <fullName>Jr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sr%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X2_Relationship_to_Client__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent %28Non-Legal Guardian%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3_Relationship_to_Client__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent %28Non-Legal Guardian%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X4_Relationship_to_Client__c</picklist>
+        <values>
+            <fullName>Case Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent %28Non-Legal Guardian%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npe01__PreferredPhone__c</picklist>
+        <values>
+            <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npe01__Preferred_Email__c</picklist>
+        <values>
+            <fullName>Alternate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npe01__Primary_Address_Type__c</picklist>
+        <values>
+            <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npe01__Secondary_Address_Type__c</picklist>
+        <values>
+            <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npe01__SystemAccountProcessor__c</picklist>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-to-One</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npo02__Naming_Exclusions__c</picklist>
+        <values>
+            <fullName>Household%5F%5Fc%2EFormal_Greeting%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Household%5F%5Fc%2EInformal_Greeting%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Household%5F%5Fc%2EName</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npo02__SystemHouseholdProcessor__c</picklist>
+        <values>
+            <fullName>All Individual Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All New or Edited Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contacts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npsp__Sustainer__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lapsed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
