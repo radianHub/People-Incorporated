@@ -15,3 +15,5 @@ package.xml
 **/classes/paymentProcessorController.cls
 **/classes/paymentProcessorController.cls-meta.xml
 **/lwc/paymentProcessor/**
+
+force-app/main/default/globalValueSets/Primary_Contact_Person.globalValueSet-meta.xml
