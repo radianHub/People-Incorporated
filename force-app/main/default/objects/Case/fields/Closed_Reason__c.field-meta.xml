@@ -108,6 +108,11 @@
                 <default>false</default>
                 <label>Did not Complete Intake Process</label>
             </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Denied</controllingFieldValue>
