@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Case Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Referral</fullName>
+                <default>true</default>
+                <label>New Referral</label>
+            </value>
+            <value>
+                <fullName>MNITS L/U</fullName>
+                <default>false</default>
+                <label>MNITS L/U</label>
+            </value>
+            <value>
+                <fullName>Comp Needed</fullName>
+                <default>false</default>
+                <label>Comp Needed</label>
+            </value>
+            <value>
+                <fullName>Prescreen</fullName>
+                <default>false</default>
+                <label>Prescreen</label>
+            </value>
+            <value>
+                <fullName>Prescreen Call 1</fullName>
+                <default>false</default>
+                <label>Prescreen Call 1</label>
+            </value>
+            <value>
+                <fullName>Prescreen Call 2</fullName>
+                <default>false</default>
+                <label>Prescreen Call 2</label>
+            </value>
+            <value>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+                <label>Qualification</label>
+            </value>
+            <value>
+                <fullName>Denied</fullName>
+                <default>false</default>
+                <label>Denied</label>
+            </value>
+            <value>
+                <fullName>Record Review</fullName>
+                <default>false</default>
+                <label>Record Review</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Waitlist</fullName>
+                <default>false</default>
+                <label>Waitlist</label>
+            </value>
+            <value>
+                <fullName>Care Coordination</fullName>
+                <default>false</default>
+                <label>Care Coordination</label>
+            </value>
+            <value>
+                <fullName>E-mail Sent</fullName>
+                <default>false</default>
+                <label>E-mail Sent</label>
+            </value>
+            <value>
+                <fullName>First Call Attempt</fullName>
+                <default>false</default>
+                <label>First Call Attempt</label>
+            </value>
+            <value>
+                <fullName>Second Call Attempt</fullName>
+                <default>false</default>
+                <label>Second Call Attempt</label>
+            </value>
+            <value>
+                <fullName>No Contact Made</fullName>
+                <default>false</default>
+                <label>No Contact Made</label>
+            </value>
+            <value>
+                <fullName>Referred to OMH</fullName>
+                <default>false</default>
+                <label>Referred to OMH</label>
+            </value>
+            <value>
+                <fullName>Referred External</fullName>
+                <default>false</default>
+                <label>Referred External</label>
+            </value>
+            <value>
+                <fullName>Screening Complete</fullName>
+                <default>false</default>
+                <label>Screening Complete</label>
+            </value>
+            <value>
+                <fullName>Intake Packet Sent</fullName>
+                <default>false</default>
+                <label>Intake Packet Sent</label>
+            </value>
+            <value>
+                <fullName>Intake Scheduled</fullName>
+                <default>false</default>
+                <label>Intake Scheduled</label>
+            </value>
+            <value>
+                <fullName>Intake Complete</fullName>
+                <default>false</default>
+                <label>Intake Complete</label>
+            </value>
+            <value>
+                <fullName>Released</fullName>
+                <default>false</default>
+                <label>Released</label>
+            </value>
+            <value>
+                <fullName>Ongoing</fullName>
+                <default>false</default>
+                <label>Ongoing</label>
+            </value>
+            <value>
+                <fullName>Interview</fullName>
+                <default>false</default>
+                <label>Interview</label>
+            </value>
+            <value>
+                <fullName>Background Check</fullName>
+                <default>false</default>
+                <label>Background Check</label>
+            </value>
+            <value>
+                <fullName>Semi-Qualified</fullName>
+                <default>false</default>
+                <label>Semi-Qualified</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Reminder Call</fullName>
+                <default>false</default>
+                <label>Reminder Call</label>
+            </value>
+            <value>
+                <fullName>After Comp Follow Up</fullName>
+                <default>false</default>
+                <label>After Comp Follow Up</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Initial Reachout</fullName>
+                <default>false</default>
+                <label>Initial Reachout</label>
+            </value>
+            <value>
+                <fullName>Future Follow Up</fullName>
+                <default>false</default>
+                <label>Future Follow Up</label>
+            </value>
+            <value>
+                <fullName>Closed With Out Services</fullName>
+                <default>false</default>
+                <label>Closed With Out Services</label>
+            </value>
+            <value>
+                <fullName>Accepted (Converted)</fullName>
+                <default>false</default>
+                <label>Accepted (Converted)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
