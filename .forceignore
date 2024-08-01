@@ -18,3 +18,4 @@ package.xml
 
 force-app/main/default/objects/Contact/recordTypes/Employee.recordType-meta.xml
 force-app/main/default/objects/Contact/fields/BuyerAttributes.field-meta.xml
+force-app/main/default/flexipages/Client_Record_Page.flexipage-meta.xml
