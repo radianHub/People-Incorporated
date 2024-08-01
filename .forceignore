@@ -15,3 +15,6 @@ package.xml
 **/classes/paymentProcessorController.cls
 **/classes/paymentProcessorController.cls-meta.xml
 **/lwc/paymentProcessor/**
+
+force-app/main/default/objects/Contact/recordTypes/Employee.recordType-meta.xml
+force-app/main/default/objects/Contact/fields/BuyerAttributes.field-meta.xml
