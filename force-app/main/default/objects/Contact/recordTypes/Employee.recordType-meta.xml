@@ -3,7 +3,7 @@
     <fullName>Employee</fullName>
     <active>true</active>
     <label>Employee</label>
-    <picklistValues>
+    <!-- <picklistValues>
         <picklist>BuyerAttributes</picklist>
         <values>
             <fullName>BusinessUser</fullName>
@@ -56,7 +56,7 @@
             <fullName>Not Listed</fullName>
             <default>false</default>
         </values>
-    </picklistValues>
+    </picklistValues> -->
     <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
