@@ -1161,6 +1161,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Ref_Result_c__c</picklist>
+        <values>
+            <fullName>Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Referent_Role__c</picklist>
         <values>
             <fullName>County Staff %28P%2EO%2E%2FC%2EM%2E%29</fullName>
