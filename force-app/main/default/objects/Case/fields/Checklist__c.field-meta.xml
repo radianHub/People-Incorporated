@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checklist__c</fullName>
+    <externalId>false</externalId>
+    <label>Checklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Current Medication List</fullName>
+                <default>false</default>
+                <label>Current Medication List</label>
+            </value>
+            <value>
+                <fullName>MN Choices Assessment/Summary</fullName>
+                <default>false</default>
+                <label>MN Choices Assessment/Summary</label>
+            </value>
+            <value>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+                <label>Proof of Income</label>
+            </value>
+            <value>
+                <fullName>Release of Information/Exchange of Information</fullName>
+                <default>false</default>
+                <label>Release of Information/Exchange of Information</label>
+            </value>
+            <value>
+                <fullName>Review and Approve MN Choices Assessment</fullName>
+                <default>false</default>
+                <label>Review and Approve MN Choices Assessment</label>
+            </value>
+            <value>
+                <fullName>Review Nursing Supports and the MN Choices Assessment</fullName>
+                <default>false</default>
+                <label>Review Nursing Supports and the MN Choices Assessment</label>
+            </value>
+            <value>
+                <fullName>Schedule Interview with Client/Care Team</fullName>
+                <default>false</default>
+                <label>Schedule Interview with Client/Care Team</label>
+            </value>
+            <value>
+                <fullName>Complete Intake/Interview Screening Form</fullName>
+                <default>false</default>
+                <label>Complete Intake/Interview Screening Form</label>
+            </value>
+            <value>
+                <fullName>Inform Client/Team of Intake Decision</fullName>
+                <default>false</default>
+                <label>Inform Client/Team of Intake Decision</label>
+            </value>
+            <value>
+                <fullName>Convert Client in Salesforce and Move to Credible</fullName>
+                <default>false</default>
+                <label>Convert Client in Salesforce and Move to Credible</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
