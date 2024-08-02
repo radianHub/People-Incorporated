@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>People_Incorporated_Program_Ref_From__c</fullName>
+    <externalId>false</externalId>
+    <label>People Incorporated Program Ref From</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AACT</fullName>
+                <default>false</default>
+                <label>AACT</label>
+            </value>
+            <value>
+                <fullName>AHRMS</fullName>
+                <default>false</default>
+                <label>AHRMS</label>
+            </value>
+            <value>
+                <fullName>BHH</fullName>
+                <default>false</default>
+                <label>BHH</label>
+            </value>
+            <value>
+                <fullName>CIS</fullName>
+                <default>false</default>
+                <label>CIS</label>
+            </value>
+            <value>
+                <fullName>Crisis</fullName>
+                <default>false</default>
+                <label>Crisis</label>
+            </value>
+            <value>
+                <fullName>CTCM</fullName>
+                <default>false</default>
+                <label>CTCM</label>
+            </value>
+            <value>
+                <fullName>CTSS</fullName>
+                <default>false</default>
+                <label>CTSS</label>
+            </value>
+            <value>
+                <fullName>Day Treatment</fullName>
+                <default>false</default>
+                <label>Day Treatment</label>
+            </value>
+            <value>
+                <fullName>Depression Care Pathway</fullName>
+                <default>false</default>
+                <label>Depression Care Pathway</label>
+            </value>
+            <value>
+                <fullName>DHHS</fullName>
+                <default>false</default>
+                <label>DHHS</label>
+            </value>
+            <value>
+                <fullName>IRTS</fullName>
+                <default>false</default>
+                <label>IRTS</label>
+            </value>
+            <value>
+                <fullName>MISUD</fullName>
+                <default>false</default>
+                <label>MISUD</label>
+            </value>
+            <value>
+                <fullName>OMH</fullName>
+                <default>false</default>
+                <label>OMH</label>
+            </value>
+            <value>
+                <fullName>OMH No Show Report</fullName>
+                <default>false</default>
+                <label>OMH No Show Report</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>SBMH</fullName>
+                <default>false</default>
+                <label>SBMH</label>
+            </value>
+            <value>
+                <fullName>WCM</fullName>
+                <default>false</default>
+                <label>WCM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

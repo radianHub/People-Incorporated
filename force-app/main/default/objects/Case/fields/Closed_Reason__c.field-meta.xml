@@ -111,6 +111,7 @@
             <value>
                 <fullName>Withdrawn</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Withdrawn</label>
             </value>
         </valueSetDefinition>
