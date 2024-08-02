@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referent_Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Referent Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>School Social Worker</fullName>
+                <default>false</default>
+                <label>School Social Worker</label>
+            </value>
+            <value>
+                <fullName>Crisis Program</fullName>
+                <default>false</default>
+                <label>Crisis Program</label>
+            </value>
+            <value>
+                <fullName>Student/Family Member</fullName>
+                <default>false</default>
+                <label>Student/Family Member</label>
+            </value>
+            <value>
+                <fullName>School Administrator</fullName>
+                <default>false</default>
+                <label>School Administrator</label>
+            </value>
+            <value>
+                <fullName>School-Based Health Center or Clinic (Nurse)</fullName>
+                <default>false</default>
+                <label>School-Based Health Center or Clinic (Nurse)</label>
+            </value>
+            <value>
+                <fullName>School Psychologist</fullName>
+                <default>false</default>
+                <label>School Psychologist</label>
+            </value>
+            <value>
+                <fullName>General Ed Teacher</fullName>
+                <default>false</default>
+                <label>General Ed Teacher</label>
+            </value>
+            <value>
+                <fullName>MH Care Provider</fullName>
+                <default>false</default>
+                <label>MH Care Provider</label>
+            </value>
+            <value>
+                <fullName>Special Ed Teacher</fullName>
+                <default>false</default>
+                <label>Special Ed Teacher</label>
+            </value>
+            <value>
+                <fullName>County Staff (P.O./C.M.)</fullName>
+                <default>false</default>
+                <label>County Staff (P.O./C.M.)</label>
+            </value>
+            <value>
+                <fullName>School Counselor</fullName>
+                <default>false</default>
+                <label>School Counselor</label>
+            </value>
+            <value>
+                <fullName>Primary Care Provider</fullName>
+                <default>false</default>
+                <label>Primary Care Provider</label>
+            </value>
+            <value>
+                <fullName>Student Support Team</fullName>
+                <default>false</default>
+                <label>Student Support Team</label>
+            </value>
+            <value>
+                <fullName>Home School Liaison/Parent Liaison</fullName>
+                <default>false</default>
+                <label>Home School Liaison/Parent Liaison</label>
+            </value>
+            <value>
+                <fullName>Parent/Guardian</fullName>
+                <default>false</default>
+                <label>Parent/Guardian</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
