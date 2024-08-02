@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Critical Core 10-14</fullName>
+                <default>false</default>
+                <label>Critical Core 10-14</label>
+            </value>
+            <value>
+                <fullName>Critical Core Skills Group 14-18</fullName>
+                <default>false</default>
+                <label>Critical Core Skills Group 14-18</label>
+            </value>
+            <value>
+                <fullName>SEALS Skills Group 11-14</fullName>
+                <default>false</default>
+                <label>SEALS Skills Group 11-14</label>
+            </value>
+            <value>
+                <fullName>SEALS Skills Group 15-17</fullName>
+                <default>false</default>
+                <label>SEALS Skills Group 15-17</label>
+            </value>
+            <value>
+                <fullName>Creative Expression Art Therapy 12-15</fullName>
+                <default>false</default>
+                <label>Creative Expression Art Therapy 12-15</label>
+            </value>
+            <value>
+                <fullName>Creative Expression Art Therapy 18-25</fullName>
+                <default>false</default>
+                <label>Creative Expression Art Therapy 18-25</label>
+            </value>
+            <value>
+                <fullName>Impulse Control Skills Group</fullName>
+                <default>false</default>
+                <label>Impulse Control Skills Group</label>
+            </value>
+            <value>
+                <fullName>Self Discovery Therapy Group</fullName>
+                <default>false</default>
+                <label>Self Discovery Therapy Group</label>
+            </value>
+            <value>
+                <fullName>Effectively Communication</fullName>
+                <default>false</default>
+                <label>Effectively Communication</label>
+            </value>
+            <value>
+                <fullName>Integrative Health &amp; Medicine Group</fullName>
+                <default>false</default>
+                <label>Integrative Health &amp; Medicine Group</label>
+            </value>
+            <value>
+                <fullName>Feel the Music</fullName>
+                <default>false</default>
+                <label>Feel the Music</label>
+            </value>
+            <value>
+                <fullName>Highview Skills Group</fullName>
+                <default>false</default>
+                <label>Highview Skills Group</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
