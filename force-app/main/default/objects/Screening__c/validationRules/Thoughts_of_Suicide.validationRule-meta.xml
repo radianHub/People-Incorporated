@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Thoughts_of_Suicide</fullName>
+    <active>true</active>
+    <description>Requires description if Thoughts of Suicide is chosen from MH Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(MH_Crisis__c, &apos;Thoughts of suicide and suicide attempts&apos;),
+ISBLANK(Thoughts_of_Suicide_Description__c))</errorConditionFormula>
+    <errorDisplayField>Thoughts_of_Suicide_Description__c</errorDisplayField>
+    <errorMessage>Thoughts of Suicide Description required.</errorMessage>
+</ValidationRule>

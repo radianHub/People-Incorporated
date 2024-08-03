@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infectious_Disease</fullName>
+    <active>true</active>
+    <description>Requires description if Infectious Disease is chosen from Current Health Concerns Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(Current_Health_Concerns__c, &apos;Infectious Disease&apos;),
+ISBLANK(Infectious_Disease_Description__c))</errorConditionFormula>
+    <errorDisplayField>Infectious_Disease_Description__c</errorDisplayField>
+    <errorMessage>Infectious Disease Description required.</errorMessage>
+</ValidationRule>

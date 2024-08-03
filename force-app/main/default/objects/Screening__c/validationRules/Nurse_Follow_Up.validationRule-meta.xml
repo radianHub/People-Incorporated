@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurse_Follow_Up</fullName>
+    <active>true</active>
+    <description>Requires description if 72 hour nurse follow is chosen from Current Health Concerns Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(Current_Health_Concerns__c, &apos;72 hours Nurse Follow Up&apos;),
+ISBLANK(X72_Hour_Nurse_Follow_Up_Description__c))</errorConditionFormula>
+    <errorDisplayField>X72_Hour_Nurse_Follow_Up_Description__c</errorDisplayField>
+    <errorMessage>72 Hour Nurse Follow Up Description required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Physical_Restriction</fullName>
+    <active>true</active>
+    <description>Requires description for physical resitrictions</description>
+    <errorConditionFormula>AND(Physical_Restrictions__c = True,
+ISBLANK(Physical_Restrictions_Description__c))</errorConditionFormula>
+    <errorDisplayField>Physical_Restrictions_Description__c</errorDisplayField>
+    <errorMessage>Physical Restrictions Description required</errorMessage>
+</ValidationRule>

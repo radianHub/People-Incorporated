@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sex_Offender</fullName>
+    <active>true</active>
+    <description>Requires description for sex offender</description>
+    <errorConditionFormula>AND(Sex_Offender__c = True,
+ISBLANK(Sex_Offender_Description__c))</errorConditionFormula>
+    <errorDisplayField>Sex_Offender_Description__c</errorDisplayField>
+    <errorMessage>Sex Offender Description required.</errorMessage>
+</ValidationRule>

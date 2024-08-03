@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mental_Health_Description</fullName>
+    <active>true</active>
+    <description>Requires description if Mental Health is chosen from MH Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(MH_Crisis__c, &apos;Mental Health&apos;), ISBLANK(Mental_Health_Description__c))</errorConditionFormula>
+    <errorDisplayField>Mental_Health_Description__c</errorDisplayField>
+    <errorMessage>Mental Health Description required</errorMessage>
+</ValidationRule>

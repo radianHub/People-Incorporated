@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MH_Crisis__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select all that apply</inlineHelpText>
+    <label>MH Crisis</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+                <label>Mental Health</label>
+            </value>
+            <value>
+                <fullName>Thoughts of suicide and suicide attempts</fullName>
+                <default>false</default>
+                <label>Thoughts of suicide and suicide attempts</label>
+            </value>
+            <value>
+                <fullName>Self-harm</fullName>
+                <default>false</default>
+                <label>Self-harm</label>
+            </value>
+            <value>
+                <fullName>Thoughts of harming others and history of harming others</fullName>
+                <default>false</default>
+                <label>Thoughts of harming others and history of harming others</label>
+            </value>
+            <value>
+                <fullName>Substance Use</fullName>
+                <default>false</default>
+                <label>Substance Use</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

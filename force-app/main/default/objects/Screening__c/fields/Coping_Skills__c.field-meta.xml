@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coping_Skills__c</fullName>
+    <description>What are your coping skills? How do you manage mental health symptoms?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What are your coping skills? How do you manage mental health symptoms?</inlineHelpText>
+    <label>Coping Skills</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>50</visibleLines>
+</CustomField>

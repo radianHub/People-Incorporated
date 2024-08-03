@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waiver__c</fullName>
+    <externalId>false</externalId>
+    <label>Waiver</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CADI</fullName>
+                <default>false</default>
+                <label>CADI</label>
+            </value>
+            <value>
+                <fullName>BI</fullName>
+                <default>false</default>
+                <label>BI</label>
+            </value>
+            <value>
+                <fullName>DD</fullName>
+                <default>false</default>
+                <label>DD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

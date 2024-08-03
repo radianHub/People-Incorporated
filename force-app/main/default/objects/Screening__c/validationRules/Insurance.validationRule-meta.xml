@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance</fullName>
+    <active>true</active>
+    <description>Requires description for insurance</description>
+    <errorConditionFormula>AND(Insurance__c = True,
+ISBLANK(Insurance_Description__c))</errorConditionFormula>
+    <errorDisplayField>Insurance_Description__c</errorDisplayField>
+    <errorMessage>Insurance Description required</errorMessage>
+</ValidationRule>

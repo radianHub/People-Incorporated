@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Harming_Others</fullName>
+    <active>true</active>
+    <description>Requires description if Thoughts of harming others and history of harming others is chosen from MH Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(MH_Crisis__c, &apos;Thoughts of harming others and history of harming others&apos;),
+ISBLANK(Harming_Others_Description__c))</errorConditionFormula>
+    <errorDisplayField>Harming_Others_Description__c</errorDisplayField>
+    <errorMessage>Harming Others Description required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commitment_Probation</fullName>
+    <active>true</active>
+    <description>Requires description for commitment/probation</description>
+    <errorConditionFormula>AND(Commitment_Probation__c = True,
+ISBLANK(Commitment_Probation_Description__c))</errorConditionFormula>
+    <errorDisplayField>Commitment_Probation_Description__c</errorDisplayField>
+    <errorMessage>Commitment/Probation Description required.</errorMessage>
+</ValidationRule>

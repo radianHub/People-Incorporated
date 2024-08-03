@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Care_Coordination_ARMHS_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Care Coordination ARMHS</label>
+    <queue>Care_Coordination_ARMHS</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IRTS_Program_Accepted_To__c</fullName>
+    <externalId>false</externalId>
+    <label>IRTS Program Accepted To</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>8th Street</fullName>
+                <default>false</default>
+                <label>8th Street</label>
+            </value>
+            <value>
+                <fullName>Anchor</fullName>
+                <default>false</default>
+                <label>Anchor</label>
+            </value>
+            <value>
+                <fullName>Chicago Avenue</fullName>
+                <default>false</default>
+                <label>Chicago Avenue</label>
+            </value>
+            <value>
+                <fullName>Diane Ahrens</fullName>
+                <default>false</default>
+                <label>Diane Ahrens</label>
+            </value>
+            <value>
+                <fullName>Huss</fullName>
+                <default>false</default>
+                <label>Huss</label>
+            </value>
+            <value>
+                <fullName>Maghakian</fullName>
+                <default>false</default>
+                <label>Maghakian</label>
+            </value>
+            <value>
+                <fullName>Nancy Page</fullName>
+                <default>false</default>
+                <label>Nancy Page</label>
+            </value>
+            <value>
+                <fullName>Riverwind</fullName>
+                <default>false</default>
+                <label>Riverwind</label>
+            </value>
+            <value>
+                <fullName>Steiner Kelting</fullName>
+                <default>false</default>
+                <label>Steiner Kelting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

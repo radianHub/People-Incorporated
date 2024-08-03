@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Concerns</fullName>
+    <active>true</active>
+    <description>Requires description if legal concerns is checked</description>
+    <errorConditionFormula>AND(Legal_Concerns__c = True,
+ISBLANK(Legal_Concerns_Description__c))</errorConditionFormula>
+    <errorDisplayField>Legal_Concerns_Description__c</errorDisplayField>
+    <errorMessage>Legal Concern Description required</errorMessage>
+</ValidationRule>

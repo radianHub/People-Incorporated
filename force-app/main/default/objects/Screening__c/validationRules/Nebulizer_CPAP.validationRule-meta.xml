@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nebulizer_CPAP</fullName>
+    <active>true</active>
+    <description>Requires description for nebulizer/cpap</description>
+    <errorConditionFormula>AND(Nebulizer_CPAP__c = True,
+ISBLANK(Nebulizer_CPAP_Description__c))</errorConditionFormula>
+    <errorDisplayField>Nebulizer_CPAP_Description__c</errorDisplayField>
+    <errorMessage>Nebulizer/CPAP Description required.</errorMessage>
+</ValidationRule>

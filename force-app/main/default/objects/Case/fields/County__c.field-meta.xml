@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>County__c</fullName>
+    <externalId>false</externalId>
+    <label>County</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anoka County</fullName>
+                <default>false</default>
+                <label>Anoka County</label>
+            </value>
+            <value>
+                <fullName>Carver County</fullName>
+                <default>false</default>
+                <label>Carver County</label>
+            </value>
+            <value>
+                <fullName>Dakota County</fullName>
+                <default>false</default>
+                <label>Dakota County</label>
+            </value>
+            <value>
+                <fullName>Hennepin County</fullName>
+                <default>false</default>
+                <label>Hennepin County</label>
+            </value>
+            <value>
+                <fullName>Ramsey County</fullName>
+                <default>false</default>
+                <label>Ramsey County</label>
+            </value>
+            <value>
+                <fullName>Aitkin County</fullName>
+                <default>false</default>
+                <label>Aitkin County</label>
+            </value>
+            <value>
+                <fullName>Becker County</fullName>
+                <default>false</default>
+                <label>Becker County</label>
+            </value>
+            <value>
+                <fullName>Beltrami County</fullName>
+                <default>false</default>
+                <label>Beltrami County</label>
+            </value>
+            <value>
+                <fullName>Benton County</fullName>
+                <default>false</default>
+                <label>Benton County</label>
+            </value>
+            <value>
+                <fullName>Big Stone County</fullName>
+                <default>false</default>
+                <label>Big Stone County</label>
+            </value>
+            <value>
+                <fullName>Blue Earth County</fullName>
+                <default>false</default>
+                <label>Blue Earth County</label>
+            </value>
+            <value>
+                <fullName>Brown County</fullName>
+                <default>false</default>
+                <label>Brown County</label>
+            </value>
+            <value>
+                <fullName>Carlton County</fullName>
+                <default>false</default>
+                <label>Carlton County</label>
+            </value>
+            <value>
+                <fullName>Cass County</fullName>
+                <default>false</default>
+                <label>Cass County</label>
+            </value>
+            <value>
+                <fullName>Chippewa County</fullName>
+                <default>false</default>
+                <label>Chippewa County</label>
+            </value>
+            <value>
+                <fullName>Chisago County</fullName>
+                <default>false</default>
+                <label>Chisago County</label>
+            </value>
+            <value>
+                <fullName>Clay County</fullName>
+                <default>false</default>
+                <label>Clay County</label>
+            </value>
+            <value>
+                <fullName>Clearwater County</fullName>
+                <default>false</default>
+                <label>Clearwater County</label>
+            </value>
+            <value>
+                <fullName>Cook County</fullName>
+                <default>false</default>
+                <label>Cook County</label>
+            </value>
+            <value>
+                <fullName>Cottonwood County</fullName>
+                <default>false</default>
+                <label>Cottonwood County</label>
+            </value>
+            <value>
+                <fullName>Crow Wing County</fullName>
+                <default>false</default>
+                <label>Crow Wing County</label>
+            </value>
+            <value>
+                <fullName>Dodge County</fullName>
+                <default>false</default>
+                <label>Dodge County</label>
+            </value>
+            <value>
+                <fullName>Douglas County</fullName>
+                <default>false</default>
+                <label>Douglas County</label>
+            </value>
+            <value>
+                <fullName>Faribault County</fullName>
+                <default>false</default>
+                <label>Faribault County</label>
+            </value>
+            <value>
+                <fullName>Fillmore County</fullName>
+                <default>false</default>
+                <label>Fillmore County</label>
+            </value>
+            <value>
+                <fullName>Freeborn County</fullName>
+                <default>false</default>
+                <label>Freeborn County</label>
+            </value>
+            <value>
+                <fullName>Goodhue County</fullName>
+                <default>false</default>
+                <label>Goodhue County</label>
+            </value>
+            <value>
+                <fullName>Grant County</fullName>
+                <default>false</default>
+                <label>Grant County</label>
+            </value>
+            <value>
+                <fullName>Houston County</fullName>
+                <default>false</default>
+                <label>Houston County</label>
+            </value>
+            <value>
+                <fullName>Hubbard County</fullName>
+                <default>false</default>
+                <label>Hubbard County</label>
+            </value>
+            <value>
+                <fullName>Isanti County</fullName>
+                <default>false</default>
+                <label>Isanti County</label>
+            </value>
+            <value>
+                <fullName>Itasca County</fullName>
+                <default>false</default>
+                <label>Itasca County</label>
+            </value>
+            <value>
+                <fullName>Jackson County</fullName>
+                <default>false</default>
+                <label>Jackson County</label>
+            </value>
+            <value>
+                <fullName>Kanabec County</fullName>
+                <default>false</default>
+                <label>Kanabec County</label>
+            </value>
+            <value>
+                <fullName>Kandiyohi County</fullName>
+                <default>false</default>
+                <label>Kandiyohi County</label>
+            </value>
+            <value>
+                <fullName>Kittson County</fullName>
+                <default>false</default>
+                <label>Kittson County</label>
+            </value>
+            <value>
+                <fullName>Koochiching County</fullName>
+                <default>false</default>
+                <label>Koochiching County</label>
+            </value>
+            <value>
+                <fullName>Lac qui Parle County</fullName>
+                <default>false</default>
+                <label>Lac qui Parle County</label>
+            </value>
+            <value>
+                <fullName>Lake County</fullName>
+                <default>false</default>
+                <label>Lake County</label>
+            </value>
+            <value>
+                <fullName>Lake of the Woods County</fullName>
+                <default>false</default>
+                <label>Lake of the Woods County</label>
+            </value>
+            <value>
+                <fullName>Le Sueur County</fullName>
+                <default>false</default>
+                <label>Le Sueur County</label>
+            </value>
+            <value>
+                <fullName>Lincoln County</fullName>
+                <default>false</default>
+                <label>Lincoln County</label>
+            </value>
+            <value>
+                <fullName>Lyon County</fullName>
+                <default>false</default>
+                <label>Lyon County</label>
+            </value>
+            <value>
+                <fullName>Mahnomen County</fullName>
+                <default>false</default>
+                <label>Mahnomen County</label>
+            </value>
+            <value>
+                <fullName>Marshall County</fullName>
+                <default>false</default>
+                <label>Marshall County</label>
+            </value>
+            <value>
+                <fullName>Martin County</fullName>
+                <default>false</default>
+                <label>Martin County</label>
+            </value>
+            <value>
+                <fullName>McLeod County</fullName>
+                <default>false</default>
+                <label>McLeod County</label>
+            </value>
+            <value>
+                <fullName>Meeker County</fullName>
+                <default>false</default>
+                <label>Meeker County</label>
+            </value>
+            <value>
+                <fullName>Mille Lacs County</fullName>
+                <default>false</default>
+                <label>Mille Lacs County</label>
+            </value>
+            <value>
+                <fullName>Morrison County</fullName>
+                <default>false</default>
+                <label>Morrison County</label>
+            </value>
+            <value>
+                <fullName>Mower County</fullName>
+                <default>false</default>
+                <label>Mower County</label>
+            </value>
+            <value>
+                <fullName>Murray County</fullName>
+                <default>false</default>
+                <label>Murray County</label>
+            </value>
+            <value>
+                <fullName>Nicollet County</fullName>
+                <default>false</default>
+                <label>Nicollet County</label>
+            </value>
+            <value>
+                <fullName>Nobles County</fullName>
+                <default>false</default>
+                <label>Nobles County</label>
+            </value>
+            <value>
+                <fullName>Norman County</fullName>
+                <default>false</default>
+                <label>Norman County</label>
+            </value>
+            <value>
+                <fullName>Olmsted County</fullName>
+                <default>false</default>
+                <label>Olmsted County</label>
+            </value>
+            <value>
+                <fullName>Otter Tail County</fullName>
+                <default>false</default>
+                <label>Otter Tail County</label>
+            </value>
+            <value>
+                <fullName>Pennington County</fullName>
+                <default>false</default>
+                <label>Pennington County</label>
+            </value>
+            <value>
+                <fullName>Pine County</fullName>
+                <default>false</default>
+                <label>Pine County</label>
+            </value>
+            <value>
+                <fullName>Pipestone County</fullName>
+                <default>false</default>
+                <label>Pipestone County</label>
+            </value>
+            <value>
+                <fullName>Polk County</fullName>
+                <default>false</default>
+                <label>Polk County</label>
+            </value>
+            <value>
+                <fullName>Pope County</fullName>
+                <default>false</default>
+                <label>Pope County</label>
+            </value>
+            <value>
+                <fullName>Red Lake County</fullName>
+                <default>false</default>
+                <label>Red Lake County</label>
+            </value>
+            <value>
+                <fullName>Redwood County</fullName>
+                <default>false</default>
+                <label>Redwood County</label>
+            </value>
+            <value>
+                <fullName>Renville County</fullName>
+                <default>false</default>
+                <label>Renville County</label>
+            </value>
+            <value>
+                <fullName>Rice County</fullName>
+                <default>false</default>
+                <label>Rice County</label>
+            </value>
+            <value>
+                <fullName>Rock County</fullName>
+                <default>false</default>
+                <label>Rock County</label>
+            </value>
+            <value>
+                <fullName>Roseau County</fullName>
+                <default>false</default>
+                <label>Roseau County</label>
+            </value>
+            <value>
+                <fullName>Scott County</fullName>
+                <default>false</default>
+                <label>Scott County</label>
+            </value>
+            <value>
+                <fullName>Sherburne County</fullName>
+                <default>false</default>
+                <label>Sherburne County</label>
+            </value>
+            <value>
+                <fullName>Sibley County</fullName>
+                <default>false</default>
+                <label>Sibley County</label>
+            </value>
+            <value>
+                <fullName>St. Louis County</fullName>
+                <default>false</default>
+                <label>St. Louis County</label>
+            </value>
+            <value>
+                <fullName>Stearns County</fullName>
+                <default>false</default>
+                <label>Stearns County</label>
+            </value>
+            <value>
+                <fullName>Steele County</fullName>
+                <default>false</default>
+                <label>Steele County</label>
+            </value>
+            <value>
+                <fullName>Stevens County</fullName>
+                <default>false</default>
+                <label>Stevens County</label>
+            </value>
+            <value>
+                <fullName>Swift County</fullName>
+                <default>false</default>
+                <label>Swift County</label>
+            </value>
+            <value>
+                <fullName>Todd County</fullName>
+                <default>false</default>
+                <label>Todd County</label>
+            </value>
+            <value>
+                <fullName>Traverse County</fullName>
+                <default>false</default>
+                <label>Traverse County</label>
+            </value>
+            <value>
+                <fullName>Wabasha County</fullName>
+                <default>false</default>
+                <label>Wabasha County</label>
+            </value>
+            <value>
+                <fullName>Wadena County</fullName>
+                <default>false</default>
+                <label>Wadena County</label>
+            </value>
+            <value>
+                <fullName>Waseca County</fullName>
+                <default>false</default>
+                <label>Waseca County</label>
+            </value>
+            <value>
+                <fullName>Washington County</fullName>
+                <default>false</default>
+                <label>Washington County</label>
+            </value>
+            <value>
+                <fullName>Watonwan County</fullName>
+                <default>false</default>
+                <label>Watonwan County</label>
+            </value>
+            <value>
+                <fullName>Wilkin County</fullName>
+                <default>false</default>
+                <label>Wilkin County</label>
+            </value>
+            <value>
+                <fullName>Winona County</fullName>
+                <default>false</default>
+                <label>Winona County</label>
+            </value>
+            <value>
+                <fullName>Wright County</fullName>
+                <default>false</default>
+                <label>Wright County</label>
+            </value>
+            <value>
+                <fullName>Yellow Medicine County</fullName>
+                <default>false</default>
+                <label>Yellow Medicine County</label>
+            </value>
+            <value>
+                <fullName>Out of State</fullName>
+                <default>false</default>
+                <label>Out of State</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
