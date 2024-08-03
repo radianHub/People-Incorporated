@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insulin_Dependence</fullName>
+    <active>true</active>
+    <description>Requires description if Insulin Dependence is chosen from Current Health Concerns Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(Current_Health_Concerns__c, &apos;Insulin Dependence&apos;),
+ISBLANK(Insulin_Dependence_Description__c))</errorConditionFormula>
+    <errorDisplayField>Insulin_Dependence_Description__c</errorDisplayField>
+    <errorMessage>Insulin Dependence Description required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Housing_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Housing Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Homeless</fullName>
+                <default>false</default>
+                <label>Homeless</label>
+            </value>
+            <value>
+                <fullName>Independent Living</fullName>
+                <default>false</default>
+                <label>Independent Living</label>
+            </value>
+            <value>
+                <fullName>Residential (in facility)</fullName>
+                <default>false</default>
+                <label>Residential (in facility)</label>
+            </value>
+            <value>
+                <fullName>Corrections Facility</fullName>
+                <default>false</default>
+                <label>Corrections Facility</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

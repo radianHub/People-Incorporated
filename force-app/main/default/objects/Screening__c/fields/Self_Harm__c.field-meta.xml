@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Harm__c</fullName>
+    <description>Any current thoughts to hurt yourself or others? History of suicide/homicidal attempts?Hospitalizations?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Any current thoughts to hurt yourself or others? History of suicide/homicidal attempts?Hospitalizations?</inlineHelpText>
+    <label>Self Harm</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>50</visibleLines>
+</CustomField>

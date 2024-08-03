@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Concerns</fullName>
+    <active>true</active>
+    <description>Requires description for finance concerns</description>
+    <errorConditionFormula>AND(Finance_Concerns__c = True,
+ISBLANK(Finance_Concerns_Description__c))</errorConditionFormula>
+    <errorDisplayField>Finance_Concerns_Description__c</errorDisplayField>
+    <errorMessage>Finance Concerns Description required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Outcome__c</fullName>
+    <externalId>false</externalId>
+    <label>Patient Outcome</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Successful Discharge</fullName>
+                <default>false</default>
+                <label>Successful Discharge</label>
+            </value>
+            <value>
+                <fullName>Unsuccessful Discharge</fullName>
+                <default>false</default>
+                <label>Unsuccessful Discharge</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Referred out</fullName>
+                <default>false</default>
+                <label>Referred out</label>
+            </value>
+            <value>
+                <fullName>Referred in</fullName>
+                <default>false</default>
+                <label>Referred in</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

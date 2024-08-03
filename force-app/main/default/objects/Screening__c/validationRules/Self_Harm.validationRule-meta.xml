@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Harm</fullName>
+    <active>true</active>
+    <description>Requires description if Self-Harm is chosen from MH Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(MH_Crisis__c, &apos;Self-harm&apos;),
+ISBLANK(Self_Harm__c))</errorConditionFormula>
+    <errorDisplayField>Self_Harm_Description__c</errorDisplayField>
+    <errorMessage>Self-Harm Description required.</errorMessage>
+</ValidationRule>

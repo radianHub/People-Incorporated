@@ -1,0 +1,41 @@
+<apex:page standardcontroller="Case">
+    <head>
+        <style type="text/css">
+            #container {
+                background-color: rgba(234, 78, 78);
+            }
+            #label {
+                width: 90%;
+                padding-top: 10px;
+                padding-bottom: 0px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            #message {
+                width: 90%;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-left: 30px;
+                padding-right: 30px;
+                font-size: 12px;
+            }
+            div {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <apex:outputPanel >
+            <div id='container'>
+                <div id='label'>
+                    WARNINGS:
+                </div>
+                <div id='message'>
+                    <apex:outputField value="{!Case.Warnings__c}"/>
+                </div>
+            </div>
+        </apex:outputPanel>
+    </body>
+</apex:page>

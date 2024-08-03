@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllOpenCases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Address__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.ARMHS,Case.Care_Coordination_Community_Connections,Case.Care_Coordination,Case.Crisis,Case.Food_Basic_Needs,Case.General,Case.Groups,Case.Health_and_Wellness,Case.Housing,Case.IRTS,Case.Long_Term_Residential,Case.Safety,Case.School_Based</value>
+    </filters>
+    <label>All Open Cases</label>
+</ListView>

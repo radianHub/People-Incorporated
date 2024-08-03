@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Substance_Use</fullName>
+    <active>true</active>
+    <description>Requires description if Substance Use is chosen from MH Picklist.</description>
+    <errorConditionFormula>AND(INCLUDES(MH_Crisis__c, &apos;Substance Use&apos;),
+ISBLANK(Substance_Use_Description__c))</errorConditionFormula>
+    <errorDisplayField>Substance_Use_Description__c</errorDisplayField>
+    <errorMessage>Substance Use Description required.</errorMessage>
+</ValidationRule>

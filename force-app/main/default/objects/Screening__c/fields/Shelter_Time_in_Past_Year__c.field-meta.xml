@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shelter_Time_in_Past_Year__c</fullName>
+    <description>In the last year, total time spent in emergency shelters, or a place not meant for human habitation</description>
+    <externalId>false</externalId>
+    <label>Shelter Time in Past Year?</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

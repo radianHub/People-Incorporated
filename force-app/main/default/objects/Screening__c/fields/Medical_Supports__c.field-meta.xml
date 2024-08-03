@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Supports__c</fullName>
+    <description>Do you have a primary care physician? Are you up-to-date with routine healthcare appointments?
+Have you faced any challenges in accessing healthcare services?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do you have a primary care physician? Are you up-to-date with routine healthcare appointments?
+Have you faced any challenges in accessing healthcare services?</inlineHelpText>
+    <label>Medical Supports</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

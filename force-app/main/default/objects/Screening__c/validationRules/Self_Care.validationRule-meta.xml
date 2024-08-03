@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Care</fullName>
+    <active>true</active>
+    <description>Requires description for self care</description>
+    <errorConditionFormula>AND(Self_Care__c = True,
+ISBLANK(Self_Care_Description__c))</errorConditionFormula>
+    <errorDisplayField>Self_Care_Description__c</errorDisplayField>
+    <errorMessage>Self Care Description required</errorMessage>
+</ValidationRule>

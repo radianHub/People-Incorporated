@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employment_Other</fullName>
+    <active>true</active>
+    <description>Requires reason if other is chosen from Employment picklist</description>
+    <errorConditionFormula>AND(ISPICKVAL(Employment_Status__c, &apos;Other&apos;),
+ISBLANK(Employment_Other__c))</errorConditionFormula>
+    <errorDisplayField>Employment_Other__c</errorDisplayField>
+    <errorMessage>Employment Other Description required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rep_Payee</fullName>
+    <active>true</active>
+    <description>Require Description if rep payee is checked</description>
+    <errorConditionFormula>AND(Rep_Payee__c = True,
+ISBLANK(Rep_Payee_Description__c))</errorConditionFormula>
+    <errorDisplayField>Rep_Payee_Description__c</errorDisplayField>
+    <errorMessage>Rep Payee Description required.</errorMessage>
+</ValidationRule>
